@@ -5,10 +5,12 @@ by Patrick Thomas Mitchell
 http://www.engineeringshock.com/100-word-arduino-audio-shield.html  
   
 Library version 1.0 Sept 23, 2017 by LeRoy Miller  
+Library version 1.5 Mar 6, 2018 Updated to work with the Little Buddy Talker made by Patrick Thomas Mitchell  
+http://www.engineeringshock.com/the-little-buddy-talker-project-page.html  
 
 ## Installation
 
-Remove the -master from the file name, unzip and move folder to your Arduino library folder.
+Remove the -master from the file name, unzip and move folder to your Arduino library folder.  
 
 ## Things To Do
 
@@ -23,6 +25,8 @@ invoke the class:
 ```Word100 Word100(10);```   
 or for the custom ham radio chip:   
 ```Word100ham Word100(10);```   
+For Little Buddy Talker (LBT) invoke:  
+```Word100lbt Word100(10);```  
 in setup begin the class:   
 ```Word100.begin();```  
 say your word - examples show how to do this from an array, but...   
@@ -55,7 +59,8 @@ https://kd8bxp.blogspot.com/
 
 ## Credits
 
-Copyright (c) 2017 LeRoy Miller
+Copyright (c) 2017 LeRoy Miller  
+Copyright (C) 2018 LeRoy Miller  
 
 ## License
 

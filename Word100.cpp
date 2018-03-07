@@ -125,3 +125,49 @@ void Word100ham::say(int value)    // Calling this function reads words individu
   delay(10);
   // YOU REALLY NEED TO ADD A STOP INPUT HERE, OR ELSE YOU'RE REALLY WASTING POWER!
 }
+
+Word100lbt::Word100lbt(int cs) {
+_cs = cs;
+}
+
+void Word100lbt::begin() {
+//pinMode(_STOP,INPUT);     // Set the "STOP" GPIO as an input.  This is the busy signal, and is high when the shield is busy playing a word
+  SPI.begin();             // Initialize SPI
+  SPI.setClockDivider(SPI_CLOCK_DIV32); // low frequency SPI
+  pinMode(_cs,OUTPUT);    // Chip select pins is an output
+  digitalWrite(_cs,HIGH); // Set chip select to be HIGH (5v) by default.  The chip on the shield is selected when this line is brought low. 
+  SPI.setBitOrder(MSBFIRST);  // OTP requires MSB first
+  SPI.setDataMode(SPI_MODE0);  // Use MODE0, as all other modes to not work
+  delay(1000);   // One second delay
+  digitalWrite(_cs, LOW);
+  SPI.transfer(_RAMPUP);
+  SPI.transfer(0x00);
+  digitalWrite(_cs,HIGH);
+}
+
+void Word100lbt::say(int value)    // Calling this function reads words individually
+{
+  // ramp up
+//digitalWrite(_cs,LOW);
+ // SPI.transfer(_RAMPUP);
+  //SPI.transfer(0x00);
+  //digitalWrite(_cs,HIGH);
+  delay(7);
+  // Transmit Data
+  digitalWrite(_cs,LOW);
+  SPI.transfer(_PLAY);
+  SPI.transfer(value);
+  digitalWrite(_cs,HIGH);
+  delay(700); 
+  //while (digitalRead(_STOP) == HIGH) { 
+   //    {}
+   // } 
+  //delay(5);
+  // ramp down
+  //digitalWrite(_cs,LOW);
+  //SPI.transfer(_RAMPDOWN);
+  //SPI.transfer(0x00);
+  //digitalWrite(_cs,HIGH);
+  //delay(10);
+  // YOU REALLY NEED TO ADD A STOP INPUT HERE, OR ELSE YOU'RE REALLY WASTING POWER!
+}
