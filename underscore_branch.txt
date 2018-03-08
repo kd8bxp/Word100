@@ -1,0 +1,16 @@
+Some notes:
+
+I've not test this branch yet - these changes were suggested by jjdeprisco for issue #2.
+
+All words now begin with an underscore (_) IE:
+
+_begin
+_alert
+_one
+_two
+
+_am is the word am like: "I am"
+_am_ is for A.M. as in time.
+and to be consistent
+_pm_ is for P.M. as in time.
+
