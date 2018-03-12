@@ -26,6 +26,14 @@ This program is free software: you can redistribute it and/or modify
     along with this program.  If not, see <http://www.gnu.org/licenses>
 */
 
+/*
+ * Mar 11, 2018 Updated words start with underscore.
+ * A.M. is _am_ and P.M. is _pm_
+ * Based on feedback from user jjdeprisco (Thank You)
+ * LeRoy Miller, (C) 2018
+ * Ver 1.5.1
+ */
+
 #include "Word100.h";
 
 Word100 Word100(10);

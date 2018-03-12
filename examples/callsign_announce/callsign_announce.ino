@@ -26,13 +26,20 @@ This program is free software: you can redistribute it and/or modify
     along with this program.  If not, see <http://www.gnu.org/licenses>
 */
 
+/*
+ * Mar 11, 2018 Updated words start with underscore.
+ * A.M. is _am_ and P.M. is _pm_
+ * Based on feedback from user jjdeprisco (Thank You)
+ * LeRoy Miller, (C) 2018
+ * Ver 1.5.1
+ */
 
 #include "Word100.h";
 
 Word100ham Word100(10);
 
 int sentence[] = {_k, _d, _8, _b, _x, _p};
-int sentence2[] = {kilo, delta, eight, bravo, xray, papa};
+int sentence2[] = {_kilo, _delta, _eight, _bravo, _xray, _papa};
 
 void setup() {
   // put your setup code here, to run once:
@@ -63,7 +70,7 @@ for (int i = 0; i < arr_len(sentence2); i++) {
 delay(1000);
 
 //say all the words. using the words as counters
-for (int i = colour; i < zone; i++) {
+for (int i = _colour; i < _zone; i++) {
   Word100.say(i);
 }
 

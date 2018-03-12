@@ -30,6 +30,11 @@ This program is free software: you can redistribute it and/or modify
  * Mar 6, 2018 - Updated to work with the Little Buddy Talker
  * http://www.engineeringshock.com/the-little-buddy-talker-project-page.html
  * LeRoy Miller, (c) 2018
+ * Mar 11, 2018 Updated words start with underscore.
+ * A.M. is _am_ and P.M. is _pm_
+ * Based on feedback from user jjdeprisco (Thank You)
+ * LeRoy Miller, (C) 2018
+ * Ver 1.5.1
  */
  
 #include "Word100.h";
