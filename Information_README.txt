@@ -1,28 +1,18 @@
 
-all words are lower case - some words are "special" keywords for the Arduino IDE.
-These "special" words have a underscore before them. Here is the list:
+all words are lower case - Mar 11, 2018 - based on feedback from user
+jjdeprisco, all words now begin with a underscore. 
 
-Normal Chip:
-_begin
-_am  this is am not a.m.
-_not
-_and
-_end
-_i
-_in
-_out
-square_root
+For the Normal Chip 100+ Word Shield and LBT:
 
-A.M. is am
-P.M. is pm
+_am  this is am not a.m. (As in "I am going to somewhere.")
+A.M. is _am_
+P.M. is _pm_
 
 Both color (US version), and colour (UK version) can be used. 
 
-Ham Chip:
+All words for the 100+ Word Ham Chip begin with a underscore.
 (All single letter from the Alphabet list has a underscore before them)
 
-_in
-_out
 
 Duplicated words:
 Normal Chip warning was duplicated.
