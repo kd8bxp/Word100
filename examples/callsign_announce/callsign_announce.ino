@@ -36,7 +36,8 @@ This program is free software: you can redistribute it and/or modify
 
 #include "Word100.h";
 
-Word100ham Word100(10);
+//Use Word100ham for the secondary "ham" chip of the 100+ Word Shield
+Word100ham Word100(10); //cs pin
 
 int sentence[] = {_k, _d, _8, _b, _x, _p};
 int sentence2[] = {_kilo, _delta, _eight, _bravo, _xray, _papa};

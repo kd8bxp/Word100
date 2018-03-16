@@ -36,7 +36,7 @@ This program is free software: you can redistribute it and/or modify
 
 #include "Word100.h";
 
-Word100 Word100(10);
+Word100 Word100(10); //cs pin
 
 int sentence[] = {_one, _two, _three, _four, _five, _six, _seven, _eight, _nine, _ten};
 int sentence2[] = {_alert, _alert, _intruder, _in, _zone, _two};

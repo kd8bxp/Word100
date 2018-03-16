@@ -20,27 +20,30 @@ Ham Chip two was duplicated.
 
 Abrivations: Common Abrivations have been added for some words.
 Most of the Months:
-jan for january
-feb for february
-mar for march
-apr for april
-aug for august
-sep and sept for september
-oct for october
-nov for november
-dec for december
+_jan for january
+_feb for february
+_mar for march
+_apr for april
+_aug for august
+_sep and sept for september
+_oct for october
+_nov for november
+_dec for december
 
 All days have been abrivated to the first three letters or full name.
-IE: mon is monday, tue is tuesday, ect. exception is thursday which the common abrivation is thur
+IE: _mon is monday, _tue is tuesday, ect. exception is thursday which the common abrivation is _thur and _thr.
 
 hours can be abrivated to hrs
 
 in both sets: Numbers with underscores before them. IE:
 _1 is the same as one, _2 is the same as two, _3 is three, ect. 
-* hundred, thousand, million are not included. 
+
+Updated Mar 16, 2018 -
+_100 and _1000 can be used for _hundred and _thousand.
+* _million is still _million 
 
 In the Ham Set:
-hertz is abrivated to hz
+_hertz is abrivated to _hz
 
 IMPORTANT OTHER THINGS TO BE AWARE OF:
 all words (underscored or otherwise) are defined and not variables. As such they should be avoided as variable names.

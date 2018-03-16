@@ -1,6 +1,6 @@
 Some notes:
 
-I've not test this branch yet - these changes were suggested by jjdeprisco for issue #2.
+these changes were suggested by jjdeprisco for issue #2.
 
 All words now begin with an underscore (_) IE:
 

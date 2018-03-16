@@ -31,6 +31,15 @@ This program is free software: you can redistribute it and/or modify
  * Based on feedback from user jjdeprisco (Thank You)
  * LeRoy Miller, (C) 2018
  * Version 1.5.1 
+
+Mar 16, 2018
+version number is changed to compile with Arduino 1.5 specifications and semantic
+versioning. https://semver.org/
+Added _100, _1000, _thr, updated documentation. 
+Library now Arduino 1.5 spec, and sumitted for library manager.
+
+Version 2.1.0 (semver)  
+
  */
 
 #ifndef Word100_h
@@ -107,6 +116,7 @@ Word100(int cs);
 #define _wed 0x27
 #define _thursday 0x28
 #define _thur 0x28
+#define _thr 0x28
 #define _friday 0x29
 #define _fri 0x29
 #define _saturday 0x2a
@@ -183,7 +193,9 @@ Word100(int cs);
 #define ninety 0x51
 #define _90 0x51
 #define _hundred 0x52
+#define _100 0x52
 #define _thousand 0x53
+#define _1000 0x53
 #define _million 0x54
 
 //Directions
@@ -488,8 +500,10 @@ Word100ham(int cs);
 #define _80 0x4e
 #define _ninety 0x4f
 #define _90 0x4f
-#define _hundred 0x50
-#define _thousand 0x51
+#define _hundred 0x52
+#define _100 0x52
+#define _thousand 0x53
+#define _1000 0x53
 #define _million 0x52
 
 //Words General
@@ -606,6 +620,7 @@ Word100lbt(int cs);
 #define _wed 0x27
 #define _thursday 0x28
 #define _thur 0x28
+#define _thr 0x28
 #define _friday 0x29
 #define _fri 0x29
 #define _saturday 0x2a
@@ -682,7 +697,9 @@ Word100lbt(int cs);
 #define ninety 0x51
 #define _90 0x51
 #define _hundred 0x52
+#define _100 0x52
 #define _thousand 0x53
+#define _1000 0x53
 #define _million 0x54
 
 //Directions
