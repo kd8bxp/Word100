@@ -4,15 +4,19 @@ A simple library for The "100+ Word" Arduino Audio Shield! Speak Arduino, Speak!
 by Patrick Thomas Mitchell  
 http://www.engineeringshock.com/100-word-arduino-audio-shield.html  
   
-Library version 1.0 Sept 23, 2017 by LeRoy Miller  
-Library version 1.5 Mar 6, 2018 Updated to work with the Little Buddy Talker made by Patrick Thomas Mitchell  
-http://www.engineeringshock.com/the-little-buddy-talker-project-page.html  
 
 ## Installation
 
 Remove the -master from the file name, unzip and move folder to your Arduino library folder.  
 
-## Things To Do
+## Versions
+
+Library version 1.0 Sept 23, 2017 by LeRoy Miller  
+Library version 1.5 Mar 6, 2018 Updated to work with the Little Buddy Talker made by Patrick Thomas Mitchell  
+http://www.engineeringshock.com/the-little-buddy-talker-project-page.html  
+Mar 16 Updated to Arduino 1.5 Library Specs. Change version numbers to Semantic
+versioning. V1.5 now becomes v2.1.0 since it was a major change at the time.  
+See Information_README.txt for minor changes.  
 
 ## Usage
 
