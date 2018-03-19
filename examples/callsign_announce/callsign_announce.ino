@@ -71,7 +71,7 @@ for (int i = 0; i < arr_len(sentence2); i++) {
 delay(1000);
 
 //say all the words. using the words as counters
-for (int i = _colour; i < _zone; i++) {
+for (int i = _a; i < _watts+1; i++) {
   Word100.say(i);
 }
 
