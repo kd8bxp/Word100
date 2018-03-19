@@ -22,6 +22,11 @@ This program is free software: you can redistribute it and/or modify
     along with this program.  If not, see <http://www.gnu.org/licenses>
 */
 
+/*
+ * Mar 19, 2018 - Added underscores to work with v2.1.0 of library
+ * -LeRoy Miller
+ * This should also work for the 100+ Word Shield (standard chip)
+ */
  
 #include "Word100.h";
 
@@ -64,9 +69,9 @@ long num;
 void sayperiod(int period)
 {
 
-int LBTdigits[] = {zero,one,two,three,four,five,six,seven,eight,nine};
-int LBTdecades[] = {0x00,0x00,twenty,thirty,forty,fifty,sixty,seventy,eighty,ninety};
-int LBTtens[] = {ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen};
+int LBTdigits[] = {_zero,_one,_two,_three,_four,_five,_six,_seven,_eight,_nine};
+int LBTdecades[] = {0x00,0x00,_twenty,_thirty,_forty,_fifty,_sixty,_seventy,_eighty,_ninety};
+int LBTtens[] = {_ten,_eleven,_twelve,_thirteen,_fourteen,_fifteen,_sixteen,_seventeen,_eighteen,_nineteen};
 
 String tenplus[] = {"ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
 String decades[] = {"","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
@@ -93,7 +98,7 @@ if (hundreds != 0)
                       Serial.print("hundred");
                       Serial.print(" ");
                       Word100.say(LBTdigits[hundreds]);
-                      Word100.say(hundred);
+                      Word100.say(_hundred);
                       period = period - (hundreds * HUNDRED); 
                     }
                     
@@ -150,7 +155,7 @@ period = number / MILLION;
 
 if (period != 0) {
                   sayperiod(period);
-                  Word100.say(million);
+                  Word100.say(_million);
                   Serial.print("million");
                   Serial.print(" ");
                   number = number - period*MILLION;
@@ -161,7 +166,7 @@ period = number / THOUSAND;
 
 if (period != 0) {
                  sayperiod(period);
-                 Word100.say(thousand);
+                 Word100.say(_thousand);
                  Serial.print("thousand");
                  Serial.print(" ");
                  number = number - period*THOUSAND;
