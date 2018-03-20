@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "Word100.h"
+#include "Word100Ham.h"
 #include <SPI.h>
 
 /*
@@ -42,11 +42,11 @@ This program is free software: you can redistribute it and/or modify
 #define _RAMPDOWN 0xB8 //COUT ram down
 
 
-Word100::Word100(int cs) {
+Word100ham::Word100ham(int cs) {
 _cs = cs;
 }
 
-void Word100::begin() {
+void Word100ham::begin() {
 pinMode(_STOP,INPUT);     // Set the "STOP" GPIO as an input.  This is the busy signal, and is high when the shield is busy playing a word
   SPI.begin();             // Initialize SPI
   SPI.setClockDivider(SPI_CLOCK_DIV32); // low frequency SPI
@@ -57,7 +57,7 @@ pinMode(_STOP,INPUT);     // Set the "STOP" GPIO as an input.  This is the busy 
   delay(1000);   // One second delay
 }
 
-void Word100::say(int value)    // Calling this function reads words individually
+void Word100ham::say(int value)    // Calling this function reads words individually
 {
   // ramp up
   digitalWrite(_cs,LOW);

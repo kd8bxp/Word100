@@ -1,4 +1,8 @@
 /*
+
+This example can say a number from zero to 999999999, speaking not only the digit
+but also the value (hundreds, thousands, millions). Thanks you Matt for making it.
+
 The "100+ Word" Arduino Audio Shield! Speak Arduino, Speak!
 by Patrick Thomas Mitchell
 http://www.engineeringshock.com/100-word-arduino-audio-shield.html
@@ -25,26 +29,39 @@ This program is free software: you can redistribute it and/or modify
 /*
  * Mar 19, 2018 - Added underscores to work with v2.1.0 of library
  * -LeRoy Miller
- * This should also work for the 100+ Word Shield (standard chip)
+ * This will also work for the 100+ Word Shield using either chip
+	Cleaned up code a little, corrected a issue that zero was being said if 
+thousands or millions ended in zero.
+
+ */
+
+/* LBT Arduino UNO Hookup
+ * LBT CS to Arduino PIN 10 
+ * LBT SC to Arduino PIN 13 
+ * LBT DI to Arduino PIN 11
  */
  
-#include "Word100.h";
+//Uncomment for the device of your choice.
+#include "Word100LBT.h"; //If using a Little Buddy Talker
+//#include "Word100Ham.h"; //Works with the 100+ Word Shield and Ham chip
+//#include "Word100.h"; //Works with the 100+ Word Shield standard chip
 
+//10 is the CS pin of your device.
 Word100lbt Word100(10); //use Word100lbt for the Little Buddy talker
+//Word100ham Word100(10); //use with 100+ Word Shield Ham chip
+//Word100 Word100(10); //use with 100+ Word Shield standard chip
 
 
 void setup() {
-  // put your setup code here, to run once:
+  
 Serial.begin(9600);
 Word100.begin();
 
 }
 
-
 void loop() {
 long num;
 
- 
   num = 6144;
   Serial.print("Saying: ");
   Serial.println(num);
@@ -55,16 +72,10 @@ long num;
   
 }
 
-
-
-
-
-
 #define MILLION  1000000
 #define THOUSAND 1000
 #define HUNDRED  100
 #define TEN     10
-
 
 void sayperiod(int period)
 {
@@ -79,14 +90,6 @@ String digit[] = { "zero","one","two","three","four","five","six","seven","eight
 
 int hundreds;
 int tens;
-
-
-
-if (period == 0) {
-  
-  Word100.say(LBTdigits[0]);   //special case for zero
-  return(0);
-}
 
 hundreds = period / HUNDRED;
 
@@ -147,9 +150,16 @@ tens = period / TEN;
 //
 
 void saynumber(long number) {
+ 
+//Mar 19, 2018 - added line LeRoy Miller, stopped the extra zero from being said if thousand or million ended with zero.
   
-int period;
+if (number == 0) {
+  
+  Word100.say(_zero);   //special case for zero
+  return(0);
+}
 
+int period;
 
 period = number / MILLION;
 
