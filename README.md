@@ -17,6 +17,8 @@ http://www.engineeringshock.com/the-little-buddy-talker-project-page.html
 Mar 16 Updated to Arduino 1.5 Library Specs. Change version numbers to Semantic
 versioning. V1.5 now becomes v2.1.0 since it was a major change at the time.  
 See Information_README.txt for minor changes.  
+Library version 3.0.0 - Mar 19, 2018 Major change after finding some issues with LBT and 100+ Word Shield with HAM chip.  
+New version has the three variations split into three different libraries, see below for more information.  
 
 ## Usage
 
@@ -24,8 +26,10 @@ The library attempts to use the words from the word list provided by Patrick Tho
  See the Information_README.txt file for specifics on some of the words.  
   
 include the library  
-```#include "Word100.h";```   
-invoke the class:  
+```#include "Word100.h"; //for the 100+ Word Shield with standard chip```   
+```#include "Word100Ham.h"; //for the 100+ Word Shield with Ham chip```  
+```#include "Word100LBT.h"; //for the LBT (Little Buddy Talker)```  
+invoke the class for your device:  
 ```Word100 Word100(10);```   
 or for the custom ham radio chip:   
 ```Word100ham Word100(10);```   
