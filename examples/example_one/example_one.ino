@@ -32,6 +32,8 @@ This program is free software: you can redistribute it and/or modify
  * Based on feedback from user jjdeprisco (Thank You)
  * LeRoy Miller, (C) 2018
  * Ver 1.5.1
+
+Mar 19, 2018 - Cleaned up code a bit. Found a few words that didn't have underscores added and corrected. Split the libraries apart because of a problem that was found with the LBT and Orignal 100+ Word code
  */
 
 #include "Word100.h";
@@ -42,7 +44,7 @@ int sentence[] = {_one, _two, _three, _four, _five, _six, _seven, _eight, _nine,
 int sentence2[] = {_alert, _alert, _intruder, _in, _zone, _two};
 
 void setup() {
-  // put your setup code here, to run once:
+  
 Word100.begin();
 
 }
@@ -53,17 +55,15 @@ void loop() {
 
   //say the first sentence (Count to Ten)
   Serial.print(arr_len(sentence));
-  // put your main code here, to run repeatedly:
-for (int i = 0; i < arr_len(sentence); i++) {
+  for (int i = 0; i < arr_len(sentence); i++) {
   Word100.say(sentence[i]);
 }
 
-delay(1000);
+delay(1000); //wait for one second
 
-//say the second sentence (Alert Alert intruder in zone two)
- Serial.println(arr_len(sentence2));
-  // put your main code here, to run repeatedly:
-for (int i = 0; i < arr_len(sentence2); i++) {
+  //say the second sentence (Alert Alert intruder in zone two)
+  Serial.println(arr_len(sentence2));
+  for (int i = 0; i < arr_len(sentence2); i++) {
   Word100.say(sentence2[i]);
 }
 

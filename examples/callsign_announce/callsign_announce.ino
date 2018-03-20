@@ -32,9 +32,13 @@ This program is free software: you can redistribute it and/or modify
  * Based on feedback from user jjdeprisco (Thank You)
  * LeRoy Miller, (C) 2018
  * Ver 1.5.1
+
+Mar 19, 2018 - Corrected problem with library version 2.1.0.
+Cleaned this code up a little.
  */
 
-#include "Word100.h";
+//This include is all that changed.
+#include "Word100Ham.h"; //Note Changes here! Mar 19, 2018 
 
 //Use Word100ham for the secondary "ham" chip of the 100+ Word Shield
 Word100ham Word100(10); //cs pin
@@ -54,24 +58,22 @@ void loop() {
 
   //say the first sentence (Count to Ten)
   Serial.print(arr_len(sentence));
-  // put your main code here, to run repeatedly:
-for (int i = 0; i < arr_len(sentence); i++) {
+  for (int i = 0; i < arr_len(sentence); i++) {
   Word100.say(sentence[i]);
 }
 
-delay(1000);
+delay(1000); //wait for 1 second
 
-//say the second sentence (Alert Alert intruder in zone two)
- Serial.println(arr_len(sentence2));
-  // put your main code here, to run repeatedly:
-for (int i = 0; i < arr_len(sentence2); i++) {
+  //say the second sentence
+  Serial.println(arr_len(sentence2));
+  for (int i = 0; i < arr_len(sentence2); i++) {
   Word100.say(sentence2[i]);
 }
 
 delay(1000);
 
 //say all the words. using the words as counters
-for (int i = _a; i < _watts+1; i++) {
+for (int i = _a; i < _watts + 1; i++) {
   Word100.say(i);
 }
 
@@ -79,9 +81,8 @@ delay(1000);
 
 //we can just call say(xxx)
 
-//Word100.say(red);
-//Word100.say(alert);
-//delay(1000);
+Word100.say(_one);
+Word100.say(_million);
 
 while(1);
 }

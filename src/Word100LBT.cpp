@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "Word100.h"
+#include "Word100LBT.h"
 #include <SPI.h>
 
 /*
@@ -36,18 +36,18 @@ This program is free software: you can redistribute it and/or modify
 // GPIO 9 = STOP
 // DO from Ap23 optional S4 - Not used here
 // ** Add stop bit so that MCU knows then  the chip has stopped talking.  OUT1 is what you'll want to use
-#define _STOP 9      // The STOP wire is the busy signal of the 
+ 
 #define _PLAY 0x98
 #define _RAMPUP 0xA8 //COUT ramp up - this value never changes
 #define _RAMPDOWN 0xB8 //COUT ram down
 
 
-Word100::Word100(int cs) {
+Word100lbt::Word100lbt(int cs) {
 _cs = cs;
 }
 
-void Word100::begin() {
-pinMode(_STOP,INPUT);     // Set the "STOP" GPIO as an input.  This is the busy signal, and is high when the shield is busy playing a word
+void Word100lbt::begin() {
+
   SPI.begin();             // Initialize SPI
   SPI.setClockDivider(SPI_CLOCK_DIV32); // low frequency SPI
   pinMode(_cs,OUTPUT);    // Chip select pins is an output
@@ -55,33 +55,21 @@ pinMode(_STOP,INPUT);     // Set the "STOP" GPIO as an input.  This is the busy 
   SPI.setBitOrder(MSBFIRST);  // OTP requires MSB first
   SPI.setDataMode(SPI_MODE0);  // Use MODE0, as all other modes to not work
   delay(1000);   // One second delay
-}
-
-void Word100::say(int value)    // Calling this function reads words individually
-{
-  // ramp up
-  digitalWrite(_cs,LOW);
+  digitalWrite(_cs, LOW);
   SPI.transfer(_RAMPUP);
   SPI.transfer(0x00);
   digitalWrite(_cs,HIGH);
+}
+
+void Word100lbt::say(int value)    // Calling this function reads words individually
+{
+  
   delay(7);
   // Transmit Data
   digitalWrite(_cs,LOW);
   SPI.transfer(_PLAY);
   SPI.transfer(value);
   digitalWrite(_cs,HIGH);
-  delay(5);
-  while (digitalRead(_STOP) == HIGH) { 
-       {}
-    } 
-  //delay(5);
-  // ramp down
-  digitalWrite(_cs,LOW);
-  SPI.transfer(_RAMPDOWN);
-  SPI.transfer(0x00);
-  digitalWrite(_cs,HIGH);
-  delay(10);
-  // YOU REALLY NEED TO ADD A STOP INPUT HERE, OR ELSE YOU'RE REALLY WASTING POWER!
+  delay(700); 
+  
 }
-
-

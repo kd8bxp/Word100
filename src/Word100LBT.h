@@ -44,17 +44,18 @@ Version 3.0.0 - Mar 19, 2018 Split classes into own header and cpp files, to ove
  - Found that not all the words had been underscored - corrected. - LeRoy Miller
  */
 
-#ifndef Word100_h
-#define Word100_h
+#ifndef Word100LBT_h
+#define Word100LBT_h
 
 #include "Arduino.h"
 #include <SPI.h>
 
-class Word100 {
+
+class Word100lbt {
 private:
     int _cs;
 public:
-Word100(int cs);
+Word100lbt(int cs);
     void begin();
     void say(int _value);
 //Colour
@@ -378,7 +379,7 @@ Word100(int cs);
  #define  _will 0xfa  
  #define  _window 0xfb  
  #define  _you 0xfc  
- #define  _zone 0xfd 
+ #define  _zone 0xf
 
 };
 
