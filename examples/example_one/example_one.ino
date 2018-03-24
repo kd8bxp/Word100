@@ -38,7 +38,8 @@ Mar 19, 2018 - Cleaned up code a bit. Found a few words that didn't have undersc
 
 #include "Word100.h";
 
-Word100 Word100(10); //cs pin
+#define CS_PIN 10
+Word100 Word100(CS_PIN); //cs pin
 
 int sentence[] = {_one, _two, _three, _four, _five, _six, _seven, _eight, _nine, _ten};
 int sentence2[] = {_alert, _alert, _intruder, _in, _zone, _two};

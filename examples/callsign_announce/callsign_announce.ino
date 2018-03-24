@@ -40,8 +40,10 @@ Cleaned this code up a little.
 //This include is all that changed.
 #include "Word100Ham.h"; //Note Changes here! Mar 19, 2018 
 
+#define CS_PIN 10
+
 //Use Word100ham for the secondary "ham" chip of the 100+ Word Shield
-Word100ham Word100(10); //cs pin
+Word100ham Word100(CS_PIN); //cs pin
 
 int sentence[] = {_k, _d, _8, _b, _x, _p};
 int sentence2[] = {_kilo, _delta, _eight, _bravo, _xray, _papa};

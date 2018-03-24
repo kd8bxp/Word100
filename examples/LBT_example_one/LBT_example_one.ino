@@ -43,12 +43,21 @@ Mar 19, 2018 - Cleaned up code a bit. Found a few words that didn't have undersc
  * LBT CS to Arduino PIN 10 
  * LBT SC to Arduino PIN 13 
  * LBT DI to Arduino PIN 11
+ *
+ * Wemos D1 Mini and Other ESP8266 Based Devices
+ * LBT CS to D0 
+ * LBT SC to D5
+ * LBT DI to D7
+ * 
+ * Some ESP8266 devices need the GPIO PIN number. 
  */
 
 #include "Word100LBT.h"; //Notice that LBT now has it's own library
 
+#define CS_PIN 10 // use D0 for the Wemos D1 Mini
+
 //use Word100lbt for the Little Buddy talker
-Word100lbt Word100(10); //cs pin 
+Word100lbt Word100(CS_PIN); //cs pin 
 
 int sentence[] = {_one, _two, _three, _four, _five, _six, _seven, _eight, _nine, _ten};
 int sentence2[] = {_alert, _alert, _intruder, _in, _zone, _two};
@@ -92,5 +101,7 @@ Word100.say(_red);
 Word100.say(_alert);
 delay(1000);
 
-while(1);
+while(1) {
+//yield(); //Uncomment for ESP8266 Devices, otherwise a WDT reset happens.
+ }
 }

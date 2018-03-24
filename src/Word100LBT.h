@@ -379,7 +379,7 @@ Word100lbt(int cs);
  #define  _will 0xfa  
  #define  _window 0xfb  
  #define  _you 0xfc  
- #define  _zone 0xf
+ #define  _zone 0xfd
 
 };
 
