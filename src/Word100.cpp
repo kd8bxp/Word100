@@ -2,6 +2,8 @@
 #include "Word100.h"
 #include <SPI.h>
 
+
+
 /*
 The "100+ Word" Arduino Audio Shield! Speak Arduino, Speak!
 by Patrick Thomas Mitchell

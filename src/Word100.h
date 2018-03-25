@@ -49,8 +49,11 @@ Version 3.0.0 - Mar 19, 2018 Split classes into own header and cpp files, to ove
 
 #include "Arduino.h"
 #include <SPI.h>
+#include "NumberFunction.h"
 
-class Word100 {
+#define WORD100 1
+
+class Word100 : public NumberFunctions {
 private:
     int _cs;
 public:
