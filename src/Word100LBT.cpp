@@ -44,6 +44,7 @@ This program is free software: you can redistribute it and/or modify
 
 Word100lbt::Word100lbt(int cs) {
 _cs = cs;
+Word100lbt::setAMPM(1);
 }
 
 void Word100lbt::begin() {
@@ -72,4 +73,124 @@ void Word100lbt::say(int value)    // Calling this function reads words individu
   digitalWrite(_cs,HIGH);
   delay(700); 
   
+}
+
+/* Portions of this code based on example by Matt Ganis (matt.ganis@gmail.com) or @mattganis on Twitter
+ *  Copyright (c) 2018 Matt Ganis
+ *  New functions: sayNumber(), sayHours(), sayMinutes()
+ */
+
+void Word100lbt::sayMinutes(long number) {
+if (number == 0) {
+    
+  Word100lbt::say(_zero);   //special case for zero
+   return 0;
+}
+
+  int _period = number;
+  int _tens = _period / TEN;
+   if (_tens == 1) {
+         Word100lbt::say(_sayTens[_period-10]);
+		            
+         _period = 0; }
+                 
+   if (_tens > 1) {
+      	 Word100lbt::say(_sayDecades[_tens]);
+	     _period = _period - _tens*TEN; } else {
+           Word100lbt::say(_zero);
+		       }
+          
+   if (_period == 0)  { return 0; } else {
+         Word100lbt::say(_sayDigits[_period]);
+			}
+if (_AMPM == 1) {
+	Word100lbt::say(_sayAMPM); }
+}
+
+void Word100lbt::sayHours(long number) {
+if (number == 0) {
+   
+	 Word100lbt::say(_zero);   //special case for zero
+	 return 0;
+}
+
+int _period = number;
+
+if (_AMPM == 1) {
+ if (_period >= 13) { _period = _period -12;}
+ if (number < 12) {_sayAMPM = _am_; } else {_sayAMPM = _pm_; }
+}
+
+  int _tens = _period / TEN;
+   if (_tens == 1) {
+		    
+		Word100lbt::say(_sayTens[_period-10]);
+		         
+         _period = 0; }
+                 
+   if (_tens > 1) {
+       	Word100lbt::say(_sayDecades[_tens]);
+		 
+       _period = _period - _tens*TEN; } 
+          
+   if (_period == 0)  { return 0; } else {
+		Word100lbt::say(_sayDigits[_period]);
+		
+	  }
+}
+
+void Word100lbt::sayPeriod(int _period) {
+
+int _hundreds = _period / HUNDRED;
+
+if (_hundreds != 0) {
+		
+	Word100lbt::say(_sayDigits[_hundreds]);
+	Word100lbt::say(_hundred);
+	_period = _period - (_hundreds * HUNDRED);
+	}
+
+int _tens = _period / TEN;
+
+if (_tens == 1) {
+	
+	Word100lbt::say(_sayTens[_period-10]);
+	_period=0;
+	}
+
+if (_tens > 1) {
+	Word100lbt::say(_sayDecades[_tens]);
+	_period = _period - _tens * TEN;
+	}
+
+if (_period == 0) { return(0); } else {
+	Word100lbt::say(_sayDigits[_period]);
+		}
+}
+
+void Word100lbt::sayNumber(long number) {
+
+if (number == 0) {
+	Word100lbt::say(_zero);
+	return(0);
+	}
+int _period;
+	_period = number / MILLION;
+if (_period != 0) {
+	Word100lbt::sayPeriod(_period);
+	Word100lbt::say(_million);
+	number=number - _period * MILLION;
+	}
+
+_period = number / THOUSAND;
+if (_period != 0) {
+	Word100lbt:sayPeriod(_period);
+	Word100lbt::say(_thousand);
+	number = number - _period * THOUSAND;
+}
+Word100lbt::sayPeriod(number);
+}
+
+void Word100lbt::setAMPM(bool AMPM) {
+_AMPM = AMPM;
 }
