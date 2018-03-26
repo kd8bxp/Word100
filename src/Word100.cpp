@@ -2,8 +2,6 @@
 #include "Word100.h"
 #include <SPI.h>
 
-
-
 /*
 The "100+ Word" Arduino Audio Shield! Speak Arduino, Speak!
 by Patrick Thomas Mitchell
@@ -38,6 +36,7 @@ This program is free software: you can redistribute it and/or modify
 // GPIO 9 = STOP
 // DO from Ap23 optional S4 - Not used here
 // ** Add stop bit so that MCU knows then  the chip has stopped talking.  OUT1 is what you'll want to use
+
 #define _STOP 9      // The STOP wire is the busy signal of the 
 #define _PLAY 0x98
 #define _RAMPUP 0xA8 //COUT ramp up - this value never changes
@@ -93,7 +92,7 @@ void Word100::say(int value)    // Calling this function reads words individuall
  *  New functions: sayNumber(), sayHours(), sayMinutes()
  */
 
-void Word100::sayMinutes(long number) {
+int Word100::sayMinutes(long number) {
 if (number == 0) {
     
   Word100::say(_zero);   //special case for zero
@@ -120,7 +119,7 @@ if (_AMPM == 1) {
 	Word100::say(_sayAMPM); }
 }
 
-void Word100::sayHours(long number) {
+int Word100::sayHours(long number) {
 if (number == 0) {
    
 	 Word100::say(_zero);   //special case for zero
@@ -152,7 +151,7 @@ if (_AMPM == 1) {
 	  }
 }
 
-void Word100::sayPeriod(int _period) {
+int Word100::sayPeriod(int _period) {
 
 int _hundreds = _period / HUNDRED;
 
@@ -181,7 +180,7 @@ if (_period == 0) { return(0); } else {
 		}
 }
 
-void Word100::sayNumber(long number) {
+int Word100::sayNumber(long number) {
 
 if (number == 0) {
 	Word100::say(_zero);
@@ -206,4 +205,8 @@ Word100::sayPeriod(number);
 
 void Word100::setAMPM(bool AMPM) {
 _AMPM = AMPM;
+}
+
+void Word100::setDelay(int wait) {
+_wait = wait;
 }

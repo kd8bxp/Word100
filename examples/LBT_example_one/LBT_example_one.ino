@@ -34,7 +34,7 @@ This program is free software: you can redistribute it and/or modify
  * A.M. is _am_ and P.M. is _pm_
  * Based on feedback from user jjdeprisco (Thank You)
  * LeRoy Miller, (C) 2018
- * Ver 1.5.1
+ * Ver 1.5.2
 
 Mar 19, 2018 - Cleaned up code a bit. Found a few words that didn't have underscores added and corrected. Split the libraries apart because of a problem that was found with the LBT and Orignal 100+ Word code
  */
@@ -72,6 +72,7 @@ Word100.begin();
 
 void loop() {
 
+  Word100.setDelay(450); //this is probably too fast
   //say the first sentence (Count to Ten)
   Serial.print(arr_len(sentence));
   for (int i = 0; i < arr_len(sentence); i++) {
@@ -80,6 +81,7 @@ void loop() {
 
 delay(1000); //wait for one second
 
+Word100.setDelay(700); //700 is the default timing for the LBT
 //say the second sentence (Alert Alert intruder in zone two)
  Serial.println(arr_len(sentence2));
  for (int i = 0; i < arr_len(sentence2); i++) {
@@ -87,6 +89,14 @@ delay(1000); //wait for one second
 }
 
 delay(1000);
+
+Word100.setDelay(550); // Here we can change the delay
+/* This may have unpredictable results.
+ *  Here is the list of all words, and you can see how
+ *  some words are cut off.
+ *  Somewhere between 625 and 700 appears to be good timings
+ *  for most words.
+ */
 
 //say all the words. using the words as counters
 for (int i = _colour; i < _zone+1; i++) {

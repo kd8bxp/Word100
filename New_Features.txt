@@ -36,3 +36,16 @@ This is only an example, but may find it's way into the library base at some poi
 Lots of math, and comments on how it works this out.
 This appears to work for any date in the 2000s. (but can be modified to work with
 any date from 1700 to current * see the comments in the sketch)
+
+Version 3.2.3
+added:
+setDelay(int wait)
+
+setDelay - works with the LBT librarys, it is included with the 100+ Word Library (for both chips) but the shield works a bit different
+		   and is only included for compatiablity between libraries.  For the 100+ Word Libraries it doesn't do anything.
+		   for the LBT library you can change the timing it pauses between words. This can have some unpredicatable results.
+		   The timings that appear to work best is somewhere between 625 and 700. 700 is the default timing provided by the 
+		   original example skteches.
+
+Also includes a work around/correction for ESP8266 device compile errors.
+

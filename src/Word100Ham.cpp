@@ -89,7 +89,7 @@ void Word100ham::say(int value)    // Calling this function reads words individu
  *  New functions: sayNumber(), sayHours(), sayMinutes()
  */
 
-void Word100ham::sayMinutes(long number) {
+int Word100ham::sayMinutes(long number) {
 if (number == 0) {
   
   Word100ham::say(_zero);   //special case for zero
@@ -120,7 +120,7 @@ if (number == 0) {
 	}
 }
 
-void Word100ham::sayHours(long number) {
+int Word100ham::sayHours(long number) {
 if (number == 0) {
   
   	 Word100ham::say(_zero);   //special case for zero
@@ -146,7 +146,7 @@ int _tens = _period / TEN;
 }
 
 
-void Word100ham::sayPeriod(int _period) {
+int Word100ham::sayPeriod(int _period) {
 int _hundreds = _period / HUNDRED;
 if (_hundreds != 0) {
 
@@ -179,8 +179,7 @@ if (_period == 0) { return(0); } else {
 	}
 }
 
-void Word100ham::sayNumber(long number) {
-
+int Word100ham::sayNumber(long number) {
 if (number == 0) {
 	
 	Word100ham::say(_zero);
@@ -211,3 +210,6 @@ void Word100ham::setAMPM(bool AMPM) {
 _AMPM = AMPM;
 }
 
+void Word100ham::setDelay(int wait) {
+_wait = wait;
+}
