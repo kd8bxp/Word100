@@ -45,6 +45,7 @@ This program is free software: you can redistribute it and/or modify
 Word100lbt::Word100lbt(int cs) {
 _cs = cs;
 Word100lbt::setAMPM(1);
+Word100lbt:setDelay(700); //default delay is about 700 milliseconds
 }
 
 void Word100lbt::begin() {
@@ -71,7 +72,7 @@ void Word100lbt::say(int value)    // Calling this function reads words individu
   SPI.transfer(_PLAY);
   SPI.transfer(value);
   digitalWrite(_cs,HIGH);
-  delay(700); 
+  delay(_wait); 
   
 }
 
@@ -80,7 +81,7 @@ void Word100lbt::say(int value)    // Calling this function reads words individu
  *  New functions: sayNumber(), sayHours(), sayMinutes()
  */
 
-void Word100lbt::sayMinutes(long number) {
+int Word100lbt::sayMinutes(long number) {
 if (number == 0) {
     
   Word100lbt::say(_zero);   //special case for zero
@@ -107,7 +108,7 @@ if (_AMPM == 1) {
 	Word100lbt::say(_sayAMPM); }
 }
 
-void Word100lbt::sayHours(long number) {
+int Word100lbt::sayHours(long number) {
 if (number == 0) {
    
 	 Word100lbt::say(_zero);   //special case for zero
@@ -139,7 +140,7 @@ if (_AMPM == 1) {
 	  }
 }
 
-void Word100lbt::sayPeriod(int _period) {
+int Word100lbt::sayPeriod(int _period) {
 
 int _hundreds = _period / HUNDRED;
 
@@ -168,7 +169,7 @@ if (_period == 0) { return(0); } else {
 		}
 }
 
-void Word100lbt::sayNumber(long number) {
+int Word100lbt::sayNumber(long number) {
 
 if (number == 0) {
 	Word100lbt::say(_zero);
@@ -193,4 +194,8 @@ Word100lbt::sayPeriod(number);
 
 void Word100lbt::setAMPM(bool AMPM) {
 _AMPM = AMPM;
+}
+
+void Word100lbt::setDelay(int wait) {
+_wait = wait;
 }

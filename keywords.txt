@@ -20,6 +20,7 @@ sayNumber	KEYWORD2
 sayHours	KEYWORD2
 sayMinutes	KEYWORD2
 setAMPM	KEYWORD2
+setDelay	KEYWORD2
 #######################################
 # Instances (KEYWORD2)
 #######################################
