@@ -16,7 +16,10 @@ Word100lbt	KEYWORD1
 
 begin	KEYWORD2
 say	KEYWORD2
-
+sayNumber	KEYWORD2
+sayHours	KEYWORD2
+sayMinutes	KEYWORD2
+setAMPM	KEYWORD2
 #######################################
 # Instances (KEYWORD2)
 #######################################

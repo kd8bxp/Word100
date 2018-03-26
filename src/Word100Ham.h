@@ -25,6 +25,11 @@ This program is free software: you can redistribute it and/or modify
     along with this program.  If not, see <http://www.gnu.org/licenses>
 */
 
+/* Portions of this code based on example by Matt Ganis (matt.ganis@gmail.com) or @mattganis on Twitter
+ *  Copyright (c) 2018 Matt Ganis
+ *  New functions: sayNumber(), sayHours(), sayMinutes()
+ */
+
 /*
  * Mar 11, 2018 Updated words start with underscore.
  * A.M. is _am_ and P.M. is _pm_
@@ -42,6 +47,8 @@ Version 2.1.0 (semver)
 
 Version 3.0.0 - Mar 19, 2018 Split classes into own header and cpp files, to over come problem that was found when using the original 100+ Word Shield and the HAM chip. May make it easier to include other external libraries, or build on these.
  - Found that not all the words had been underscored - corrected. - LeRoy Miller
+
+version 3.2.2 - added sayHours, sayMinutes, sayNumber, setAMPM (Does Nothing in Word100Ham library)
  */
 
 
@@ -51,13 +58,12 @@ Version 3.0.0 - Mar 19, 2018 Split classes into own header and cpp files, to ove
 #include "Arduino.h"
 #include <SPI.h>
 
-class Word100ham {
-private:
-    int _cs;
-public:
-Word100ham(int cs);
-    void begin();
-    void say(int _value);
+#define WORD100 1
+#define MILLION  1000000
+#define THOUSAND 1000
+#define HUNDRED  100
+#define TEN     10
+
 //Alphabet
 #define _a 0x00  //US spelling
 #define _b 0x01
@@ -221,6 +227,27 @@ Word100ham(int cs);
 #define _transmitting 0x7a
 #define _volts 0x7b
 #define _watts 0x7c
+
+class Word100ham {
+private:
+    int _cs;
+    void sayPeriod(int _period);
+	int _sayDigits[10] = {_zero,_one,_two,_three,_four,_five,_six,_seven,_eight,_nine};
+	int _sayDecades[11] = {0x00,0x00,_twenty,_thirty,_forty,_fifty,_sixty,_seventy,_eighty,_ninety};
+	int _sayTens[11] = {_ten,_eleven,_twelve,_thirteen,_fourteen,_fifteen,_sixteen,_seventeen,_eighteen,_nineteen};
+	int _hundreds;
+	int _tens;
+	int _number;
+	bool _AMPM;
+	int _sayAMPM;
+public:
+Word100ham(int cs);
+    void begin();
+    void say(int _value);
+	void sayNumber(long number);
+	void sayHours(long number);
+	void sayMinutes(long number);
+	void setAMPM(bool AMPM);
 };
 
 

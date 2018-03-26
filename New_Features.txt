@@ -1,0 +1,38 @@
+Version 3.2.2 (Mar 25, 2018) - LeRoy Miller (C) 2018
+
+added:
+sayNumber(long number)
+sayHours(long number)
+sayMinutes(long number)
+setAMPM(bool AMPM)
+
+sayNumber code based on saynumber example code by Matt Ganis (C) 2018
+		  say a number from zero to 999999999. Speaking not only the digits
+		  but also the value (hundreds, thousands, millions). Thanks to Matt for
+		  the idea. 
+
+sayHours also based on saynumber example code by Matt Ganis.	
+	     code formats military time (24 hour) to am/pm and speaks the digits.
+ 		 code also sets a am/pm flag for sayMinutes.
+
+sayMinutes also based on saynumber example code by Matt Ganis.
+		   says the digits of a given number, adds a leading zero if needed.
+		   says am/pm if set for setAMPM is true
+
+setAMPM this is a bool and can be passed as 1 or 0 or true or false. The 
+		default for this is true. In otherwords say AM/PM.
+		* The HAM chip is missing the words AM and PM, this function is
+		  included, but doesn't do anything. *
+
+* Notes: AM or PM is actually set when you call sayHours. But said when calling
+	sayMinutes - You may get unwanted results if you call sayMinutes before
+	sayHours.  One possiable work around is to setAMPM to false - these will
+	set the flag for 24 hour (almost known as Military) time.
+
+See sayNumber example sketch (Notice: saynumber example is left for historical reasons, it's a good example of how this all works.)
+
+Added example of "say the name of the day when given the Month Day year"
+This is only an example, but may find it's way into the library base at some point.
+Lots of math, and comments on how it works this out.
+This appears to work for any date in the 2000s. (but can be modified to work with
+any date from 1700 to current * see the comments in the sketch)

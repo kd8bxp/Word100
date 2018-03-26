@@ -41,15 +41,23 @@ thousands or millions ended in zero.
  * LBT DI to Arduino PIN 11
  */
  
+ /* Mar, 25 2018 - sayNumber(), sayHours(), sayMinutes() and
+  *  setAMPM have been added to the libraries. 
+  *  see New_Features.txt for more information.
+  *  
+  *  This sketch left for historical, and learning
+  *  This is a good example of how the new functions work.
+  *    */
+  
 //Uncomment for the device of your choice.
-#include "Word100LBT.h"; //If using a Little Buddy Talker
-//#include "Word100Ham.h"; //Works with the 100+ Word Shield and Ham chip
+//#include "Word100LBT.h"; //If using a Little Buddy Talker
+#include "Word100Ham.h"; //Works with the 100+ Word Shield and Ham chip
 //#include "Word100.h"; //Works with the 100+ Word Shield standard chip
 
 #define CS_PIN 10 //CS pin of your device.
 
-Word100lbt Word100(CS_PIN); //use Word100lbt for the Little Buddy talker
-//Word100ham Word100(CS_PIN); //use with 100+ Word Shield Ham chip
+//Word100lbt Word100(CS_PIN); //use Word100lbt for the Little Buddy talker
+Word100ham Word100(CS_PIN); //use with 100+ Word Shield Ham chip
 //Word100 Word100(CS_PIN); //use with 100+ Word Shield standard chip
 
 
