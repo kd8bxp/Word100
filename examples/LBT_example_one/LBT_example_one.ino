@@ -59,8 +59,8 @@ Mar 19, 2018 - Cleaned up code a bit. Found a few words that didn't have undersc
 //use Word100lbt for the Little Buddy talker
 Word100lbt Word100(CS_PIN); //cs pin 
 
-int sentence[] = {_one, _two, _three, _four, _five, _six, _seven, _eight, _nine, _ten};
-int sentence2[] = {_alert, _alert, _intruder, _in, _zone, _two};
+int sentence[] = {_ONE, _TWO, _THREE, _FOUR, _FIVE, _SIX, _SEVEN, _EIGHT, _NINE, _TEN};
+int sentence2[] = {_ALERT, _ALERT, _INTRUDER, _IN, _ZONE, _TWO};
 
 void setup() {
   
@@ -71,8 +71,7 @@ Word100.begin();
 #define arr_len( x ) ( sizeof ( x ) / sizeof (*x) )
 
 void loop() {
-
-  Word100.setDelay(450); //this is probably too fast
+  
   //say the first sentence (Count to Ten)
   Serial.print(arr_len(sentence));
   for (int i = 0; i < arr_len(sentence); i++) {
@@ -81,7 +80,6 @@ void loop() {
 
 delay(1000); //wait for one second
 
-Word100.setDelay(700); //700 is the default timing for the LBT
 //say the second sentence (Alert Alert intruder in zone two)
  Serial.println(arr_len(sentence2));
  for (int i = 0; i < arr_len(sentence2); i++) {
@@ -90,16 +88,9 @@ Word100.setDelay(700); //700 is the default timing for the LBT
 
 delay(1000);
 
-Word100.setDelay(550); // Here we can change the delay
-/* This may have unpredictable results.
- *  Here is the list of all words, and you can see how
- *  some words are cut off.
- *  Somewhere between 625 and 700 appears to be good timings
- *  for most words.
- */
 
 //say all the words. using the words as counters
-for (int i = _colour; i < _zone+1; i++) {
+for (int i = _COLOUR; i < _ZONE+1; i++) {
   Word100.say(i);
 }
 
@@ -107,8 +98,8 @@ delay(1000);
 
 //we can just call say(xxx)
 
-Word100.say(_red);
-Word100.say(_alert);
+Word100.say(_RED);
+Word100.say(_ALERT);
 delay(1000);
 
 while(1) {

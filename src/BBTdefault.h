@@ -9,381 +9,381 @@
 #define HUNDRED  100
 #define TEN     10
 
-//Chip Select 1
-//Colour
-#define _colour 0x00,1 //EU spelling
-#define _color 0x00,1  //US spelling
-#define _black 0x01,1
-#define _white 0x02,1
-#define _blue 0x03,1
-#define _green 0x04,1
-#define _orange 0x05,1
-#define _red 0x06,1
-#define _yellow 0x07,1
-#define _purple 0x08,1
+//CHIP SELECT 1
+//COLOUR
+#define _COLOUR 0X00,1 //EU SPELLING
+#define _COLOR 0X00,1  //US SPELLING
+#define _BLACK 0X01,1
+#define _WHITE 0X02,1
+#define _BLUE 0X03,1
+#define _GREEN 0X04,1
+#define _ORANGE 0X05,1
+#define _RED 0X06,1
+#define _YELLOW 0X07,1
+#define _PURPLE 0X08,1
 
-//Command
-#define _abort 0x09,1
-#define _activate 0x0a,1
-#define _begin 0x0b,1
-#define _deactivate 0x0c,1
-#define _destruct 0x0d,1
-#define _go 0x0e,1
-#define _move 0x0f,1
-#define _off 0x10,1
-#define _on 0x11,1
-#define _open 0x12,1
-#define _pull 0x13,1
-#define _push 0x14,1
-#define _reset 0x15,1
-#define _run 0x16,1
-#define _stop 0x17,1
-#define _turn 0x18,1
+//COMMAND
+#define _ABORT 0X09,1
+#define _ACTIVATE 0X0A,1
+#define _BEGIN 0X0B,1
+#define _DEACTIVATE 0X0C,1
+#define _DESTRUCT 0X0D,1
+#define _GO 0X0E,1
+#define _MOVE 0X0F,1
+#define _OFF 0X10,1
+#define _ON 0X11,1
+#define _OPEN 0X12,1
+#define _PULL 0X13,1
+#define _PUSH 0X14,1
+#define _RESET 0X15,1
+#define _RUN 0X16,1
+#define _STOP 0X17,1
+#define _TURN 0X18,1
 
-//Months/Days/Time
-#define _january 0x19,1
-#define _jan 0x19,1
-#define _february 0x1a,1
-#define _feb 0x1a,1
-#define _march 0x1b,1
-#define _mar 0x1b,1
-#define _april 0x1c,1
-#define _apr 0x1c,1
-#define _may 0x1d,1
-#define _june 0x1e,1
-#define _july 0x1f,1
-#define _august 0x20,1
-#define _aug 0x20,1
-#define _september 0x21,1
-#define _sep 0x21,1
-#define _sept 0x21,1
-#define _october 0x22,1
-#define _oct 0x22,1
-#define _november 0x23,1
-#define _nov 0x23,1
-#define _december 0x24,1
-#define _dec 0x24,1
-#define _monday 0x25,1
-#define _mon 0x25,1
-#define _tuesday 0x26,1
-#define _tue 0x26,1
-#define _wednesday 0x27,1
-#define _wed 0x27,1
-#define _thursday 0x28,1
-#define _thur 0x28,1
-#define _thr 0x28,1
-#define _friday 0x29,1
-#define _fri 0x29,1
-#define _saturday 0x2a,1
-#define _sat 0x2a,1
-#define _sunday 0x2b,1
-#define _sun 0x2b,1
-#define _am_ 0x2c,1
-#define _pm_ 0x2d,1
-#define _date 0x2e,1
-#define _day 0x2f,1
-#define _hours 0x30,1
-#define _hrs 0x30,1
-#define _month 0x31,1
-#define _oclock 0x32,1
-#define _time 0x33,1
-#define _week 0x34,1
-#define _year 0x35,1
+//MONTHS/DAYS/TIME
+#define _JANUARY 0X19,1
+#define _JAN 0X19,1
+#define _FEBRUARY 0X1A,1
+#define _FEB 0X1A,1
+#define _MARCH 0X1B,1
+#define _MAR 0X1B,1
+#define _APRIL 0X1C,1
+#define _APR 0X1C,1
+#define _MAY 0X1D,1
+#define _JUNE 0X1E,1
+#define _JULY 0X1F,1
+#define _AUGUST 0X20,1
+#define _AUG 0X20,1
+#define _SEPTEMBER 0X21,1
+#define _SEP 0X21,1
+#define _SEPT 0X21,1
+#define _OCTOBER 0X22,1
+#define _OCT 0X22,1
+#define _NOVEMBER 0X23,1
+#define _NOV 0X23,1
+#define _DECEMBER 0X24,1
+#define _DEC 0X24,1
+#define _MONDAY 0X25,1
+#define _MON 0X25,1
+#define _TUESDAY 0X26,1
+#define _TUE 0X26,1
+#define _WEDNESDAY 0X27,1
+#define _WED 0X27,1
+#define _THURSDAY 0X28,1
+#define _THUR 0X28,1
+#define _THR 0X28,1
+#define _FRIDAY 0X29,1
+#define _FRI 0X29,1
+#define _SATURDAY 0X2A,1
+#define _SAT 0X2A,1
+#define _SUNDAY 0X2B,1
+#define _SUN 0X2B,1
+#define _AM_ 0X2C,1
+#define _PM_ 0X2D,1
+#define _DATE 0X2E,1
+#define _DAY 0X2F,1
+#define _HOURS 0X30,1
+#define _HRS 0X30,1
+#define _MONTH 0X31,1
+#define _OCLOCK 0X32,1
+#define _TIME 0X33,1
+#define _WEEK 0X34,1
+#define _YEAR 0X35,1
 
-//Numbers
-#define _zero 0x36,1
-#define _0 0x36,1
-#define _one 0x37,1
-#define _1 0x37,1
-#define _two 0x38,1
-#define _2 0x38,1
-#define _three 0x39,1
-#define _3 0x39,1
-#define _four 0x3a,1
-#define _4 0x3a,1
-#define _five 0x3b,1
-#define _5 0x3b,1
-#define _six 0x3c,1
-#define _6 0x3c,1
-#define _seven 0x3d,1
-#define _7 0x3b,1
-#define _eight 0x3e,1
-#define _8 0x3e,1
-#define _nine 0x3f,1
-#define _9 0x3f,1
-#define _ten 0x40,1
-#define _10 0x40,1
-#define _eleven 0x41,1
-#define _11 0x41,1
-#define _twelve 0x42,1
-#define _12 0x42,1
-#define _thirteen 0x43,1
-#define _13 0x43,1
-#define _fourteen 0x44,1
-#define _14 0x44,1
-#define _fifteen 0x45,1
-#define _15 0x45,1
-#define _sixteen 0x46,1
-#define _16 0x46,1
-#define _seventeen 0x47,1
-#define _17 0x47,1
-#define _eighteen 0x48,1
-#define _18 0x48,1
-#define _nineteen 0x49,1
-#define _19 0x49,1
-#define _twenty 0x4a,1
-#define _20 0x4a,1
-#define _thirty 0x4b,1
-#define _30 0x4b,1
-#define _forty 0x4c,1
-#define _40 0x4c,1
-#define _fifty 0x4d,1
-#define _50 0x4d,1
-#define _sixty 0x4e,1
-#define _60 0x4e,1
-#define _seventy 0x4f,1
-#define _70 0x4f,1
-#define _eighty 0x50,1
-#define _80 0x50,1
-#define _ninety 0x51,1
-#define _90 0x51,1
-#define _hundred 0x52,1
-#define _100 0x52,1
-#define _thousand 0x53,1
-#define _1000 0x53,1
-#define _million 0x54,1
+//NUMBERS
+#define _ZERO 0X36,1
+#define _0 0X36,1
+#define _ONE 0X37,1
+#define _1 0X37,1
+#define _TWO 0X38,1
+#define _2 0X38,1
+#define _THREE 0X39,1
+#define _3 0X39,1
+#define _FOUR 0X3A,1
+#define _4 0X3A,1
+#define _FIVE 0X3B,1
+#define _5 0X3B,1
+#define _SIX 0X3C,1
+#define _6 0X3C,1
+#define _SEVEN 0X3D,1
+#define _7 0X3B,1
+#define _EIGHT 0X3E,1
+#define _8 0X3E,1
+#define _NINE 0X3F,1
+#define _9 0X3F,1
+#define _TEN 0X40,1
+#define _10 0X40,1
+#define _ELEVEN 0X41,1
+#define _11 0X41,1
+#define _TWELVE 0X42,1
+#define _12 0X42,1
+#define _THIRTEEN 0X43,1
+#define _13 0X43,1
+#define _FOURTEEN 0X44,1
+#define _14 0X44,1
+#define _FIFTEEN 0X45,1
+#define _15 0X45,1
+#define _SIXTEEN 0X46,1
+#define _16 0X46,1
+#define _SEVENTEEN 0X47,1
+#define _17 0X47,1
+#define _EIGHTEEN 0X48,1
+#define _18 0X48,1
+#define _NINETEEN 0X49,1
+#define _19 0X49,1
+#define _TWENTY 0X4A,1
+#define _20 0X4A,1
+#define _THIRTY 0X4B,1
+#define _30 0X4B,1
+#define _FORTY 0X4C,1
+#define _40 0X4C,1
+#define _FIFTY 0X4D,1
+#define _50 0X4D,1
+#define _SIXTY 0X4E,1
+#define _60 0X4E,1
+#define _SEVENTY 0X4F,1
+#define _70 0X4F,1
+#define _EIGHTY 0X50,1
+#define _80 0X50,1
+#define _NINETY 0X51,1
+#define _90 0X51,1
+#define _HUNDRED 0X52,1
+#define _100 0X52,1
+#define _THOUSAND 0X53,1
+#define _1000 0X53,1
+#define _MILLION 0X54,1
 
-//Directions
-#define _north 0x55,1
-#define _east 0x56,1
-#define _south 0x57,1
-#define _west 0x58,1
-#define _up 0x59,1
-#define _down 0x5a,1
-#define _left 0x5b,1
-#define _right 0x5c,1
-#define _backward 0x5d,1
-#define _forward 0x5e,1
+//DIRECTIONS
+#define _NORTH 0X55,1
+#define _EAST 0X56,1
+#define _SOUTH 0X57,1
+#define _WEST 0X58,1
+#define _UP 0X59,1
+#define _DOWN 0X5A,1
+#define _LEFT 0X5B,1
+#define _RIGHT 0X5C,1
+#define _BACKWARD 0X5D,1
+#define _FORWARD 0X5E,1
 
-//feelings
-#define _happy 0x5f,1
-#define _sad 0x60,1
-#define _angry 0x61,1
+//FEELINGS
+#define _HAPPY 0X5F,1
+#define _SAD 0X60,1
+#define _ANGRY 0X61,1
 
-//Measurement
-#define _ac 0x62,
-#define _amps 0x63,1
-#define _celsius 0x64,1
-#define _centi 0x65,1
-#define _cubic 0x66,1
-#define _dc 0x67,1
-#define _degrees 0x68,1
-#define _diameter 0x69,1
-#define _fahrenheit 0x6a,1
-#define _farads 0x6b,1
-#define _feet 0x6c,1
-#define _frequency 0x6d,1
-#define _giga 0x6e,1
-#define _gram 0x6f,1
-#define _height 0x70,1
-#define _hertz 0x71,1
-#define _humidity 0x72,1
-#define _inches 0x73,1
-#define _kilo 0x74,1
-#define _length 0x75,1
-#define _light 0x76,1
-#define _litre 0x77,1
-#define _mega 0x78,1
-#define _meters 0x79,1
-#define _micro 0x7a,1
-#define _milli 0x7b,1
-#define _minutes 0x7c,1
-#define _nano 0x7d,1
-#define _newton 0x7e,1
-#define _night 0x7f,1
-#define _ohms 0x80,1
-#define _per 0x81,1
-#define _pico 0x82,1
-#define _pitch 0x83,1
-#define _pounds 0x84,1
-#define _radius 0x85,1
-#define _rate 0x86,1
-#define _seconds 0x87,1
-#define _sound 0x88,1
-#define _speed 0x89,1
-#define _temperature 0x8a,1
-#define _volts 0x8b,1
-#define _watts 0x8c,1
-#define _weight 0x8d,1
+//MEASUREMENT
+#define _AC 0X62,
+#define _AMPS 0X63,1
+#define _CELSIUS 0X64,1
+#define _CENTI 0X65,1
+#define _CUBIC 0X66,1
+#define _DC 0X67,1
+#define _DEGREES 0X68,1
+#define _DIAMETER 0X69,1
+#define _FAHRENHEIT 0X6A,1
+#define _FARADS 0X6B,1
+#define _FEET 0X6C,1
+#define _FREQUENCY 0X6D,1
+#define _GIGA 0X6E,1
+#define _GRAM 0X6F,1
+#define _HEIGHT 0X70,1
+#define _HERTZ 0X71,1
+#define _HUMIDITY 0X72,1
+#define _INCHES 0X73,1
+#define _KILO 0X74,1
+#define _LENGTH 0X75,1
+#define _LIGHT 0X76,1
+#define _LITRE 0X77,1
+#define _MEGA 0X78,1
+#define _METERS 0X79,1
+#define _MICRO 0X7A,1
+#define _MILLI 0X7B,1
+#define _MINUTES 0X7C,1
+#define _NANO 0X7D,1
+#define _NEWTON 0X7E,1
+#define _NIGHT 0X7F,1
+#define _OHMS 0X80,1
+#define _PER 0X81,1
+#define _PICO 0X82,1
+#define _PITCH 0X83,1
+#define _POUNDS 0X84,1
+#define _RADIUS 0X85,1
+#define _RATE 0X86,1
+#define _SECONDS 0X87,1
+#define _SOUND 0X88,1
+#define _SPEED 0X89,1
+#define _TEMPERATURE 0X8A,1
+#define _VOLTS 0X8B,1
+#define _WATTS 0X8C,1
+#define _WEIGHT 0X8D,1
 
-//Security
-#define _alarm 0x8e,1
-#define _alert 0x8f,1
-#define _detected 0x90,1
-#define _intruder 0x91,1
-#define _security 0x92,1
-#define _system 0x93,1
-#define _warning 0x94,1
+//SECURITY
+#define _ALARM 0X8E,1
+#define _ALERT 0X8F,1
+#define _DETECTED 0X90,1
+#define _INTRUDER 0X91,1
+#define _SECURITY 0X92,1
+#define _SYSTEM 0X93,1
+#define _WARNING 0X94,1
 
-//Math
-#define _clockwise 0x95,1
-#define _counter 0x96,1
-#define _divide 0x97,1
-#define _equals 0x98,1
-#define _minus 0x99,1
-#define _multiply 0x9a,1
-#define _not 0x9b,1
-#define _plus 0x9c,1
-#define _square_root 0x9d,1
+//MATH
+#define _CLOCKWISE 0X95,1
+#define _COUNTER 0X96,1
+#define _DIVIDE 0X97,1
+#define _EQUALS 0X98,1
+#define _MINUS 0X99,1
+#define _MULTIPLY 0X9A,1
+#define _NOT 0X9B,1
+#define _PLUS 0X9C,1
+#define _SQUARE_ROOT 0X9D,1
 
- //Words General
- #define _a_ 0x9e,1  //Difference Here _a_ English Female
- #define _ahead 0x9f,1
- #define _air 0xa0,1
- #define _altitude 0xa1,1
- #define _an 0xa2,1
- #define _am 0xa3,1 //am not a.m.
- #define _and 0xa4,1
- #define _are 0xa5,1
- #define _area 0xa6,1
- #define _at 0xa7,1
- #define _axis 0xa8,1
- #define _back 0xa9,1
- #define _be 0xaa,1
- #define _bearing 0xab,1
- #define _been 0xac,1
- #define _button 0xad,1
- #define _by 0xae,1
- #define _can 0xaf,1
- #define _caution 0xb0,1
- #define _change 0xb1,1
- #define _check 0xb2,1
- #define _closed 0xb3,1
- #define _condition 0xb4,1
- #define _contact 0xb5,1
- #define _critical 0xb6,1
- #define _door 0xb7,1
- #define _empty 0xb8,1  
- #define _end 0xb9,1  
- #define _environment 0xba,1  
- #define _falling 0xbb,1  
- #define  _fast 0xbc,1  
- #define  _fatal 0xbd,1  
- #define  _feel 0xbe,1  
- #define  _first 0xbf,1  
- #define  _from 0xc0,1  
- #define  _front 0xc1,1  
- #define  _going 0xc2,1  
- #define  _goodbye 0xc3,1  
- #define  _he  0xc4,1  
- #define  _hello 0xc5,1  
- #define  _high 0xc6,1  
- #define  _how 0xc7,1  
- #define  _i_ 0xc8,1 //Difference Here _a_ English Female  
- #define  _in  0xc9,1  
- #define  _incoming 0xca,1  
- #define  _ing 0xcb,1  
- #define  _inside 0xcc,1  
- #define  _is 0xcd,1  
- #define  _it 0xce,1  
- #define  _laser 0xcf,1  
- #define  _last 0xd0,1  
- #define  _level 0xd1,1  
- #define  _locked 0xd2,1  
- #define  _low 0xd3,1  
- #define  _me 0xd4,1  
- #define  _message 0xd5,1  
- #define  _mode 0xd6,1  
- #define  _motor 0xd7,1  
- #define  _new 0xd8,1  
- #define  _next 0xd9,1  
- #define  _nomincal 0xda,1  
- #define  _object 0xdb,1  
- #define  _obstacle 0xdc,1  
- #define  _of 0xdd,1  
- #define  _out 0xde,1  
- #define  _outside 0xdf,1  
- #define  _press 0xe0,1  
- #define  _process 0xe1,1  
- #define  _purge 0xe2,1  
- #define  _range 0xe3,1  
- #define  _rear 0xe4,1  
- #define  _received 0xe5,1  
- #define  _rising 0xe6,1  
- #define  _sent 0xe7,1  
- #define  _sequence 0xe8,1  
- #define  _she 0xe9,1  
- #define  _sleep 0xea,1  
- #define  _slow 0xeb,1 
- #define  _stable 0xec,1  
- #define  _start 0xed,1  
- #define  _step 0xee,1  
- #define  _stepper 0xef,1  
- #define  _switch 0xf0,1  
- #define  _tell 0xf1,1  
- #define  _the 0xf2,1  
- #define  _there 0xf3,1  
- #define  _they 0xf4,1  
- #define  _to  0xf5,1  
- #define  _total 0xf6,1  
- #define  _vent 0xf7,1  
- #define  _we  0xf9,1  
- #define  _will 0xfa,1  
- #define  _window 0xfb,1  
- #define  _you 0xfc,1  
- #define  _zone 0xfd,1
+ //WORDS GENERAL
+ #define _A_ 0X9E,1  //DIFFERENCE HERE _A_ ENGLISH FEMALE
+ #define _AHEAD 0X9F,1
+ #define _AIR 0XA0,1
+ #define _ALTITUDE 0XA1,1
+ #define _AN 0XA2,1
+ #define _AM 0XA3,1 //AM NOT A.M.
+ #define _AND 0XA4,1
+ #define _ARE 0XA5,1
+ #define _AREA 0XA6,1
+ #define _AT 0XA7,1
+ #define _AXIS 0XA8,1
+ #define _BACK 0XA9,1
+ #define _BE 0XAA,1
+ #define _BEARING 0XAB,1
+ #define _BEEN 0XAC,1
+ #define _BUTTON 0XAD,1
+ #define _BY 0XAE,1
+ #define _CAN 0XAF,1
+ #define _CAUTION 0XB0,1
+ #define _CHANGE 0XB1,1
+ #define _CHECK 0XB2,1
+ #define _CLOSED 0XB3,1
+ #define _CONDITION 0XB4,1
+ #define _CONTACT 0XB5,1
+ #define _CRITICAL 0XB6,1
+ #define _DOOR 0XB7,1
+ #define _EMPTY 0XB8,1  
+ #define _END 0XB9,1  
+ #define _ENVIRONMENT 0XBA,1  
+ #define _FALLING 0XBB,1  
+ #define  _FAST 0XBC,1  
+ #define  _FATAL 0XBD,1  
+ #define  _FEEL 0XBE,1  
+ #define  _FIRST 0XBF,1  
+ #define  _FROM 0XC0,1  
+ #define  _FRONT 0XC1,1  
+ #define  _GOING 0XC2,1  
+ #define  _GOODBYE 0XC3,1  
+ #define  _HE  0XC4,1  
+ #define  _HELLO 0XC5,1  
+ #define  _HIGH 0XC6,1  
+ #define  _HOW 0XC7,1  
+ #define  _I_ 0XC8,1 //DIFFERENCE HERE _A_ ENGLISH FEMALE  
+ #define  _IN  0XC9,1  
+ #define  _INCOMING 0XCA,1  
+ #define  _ING 0XCB,1  
+ #define  _INSIDE 0XCC,1  
+ #define  _IS 0XCD,1  
+ #define  _IT 0XCE,1  
+ #define  _LASER 0XCF,1  
+ #define  _LAST 0XD0,1  
+ #define  _LEVEL 0XD1,1  
+ #define  _LOCKED 0XD2,1  
+ #define  _LOW 0XD3,1  
+ #define  _ME 0XD4,1  
+ #define  _MESSAGE 0XD5,1  
+ #define  _MODE 0XD6,1  
+ #define  _MOTOR 0XD7,1  
+ #define  _NEW 0XD8,1  
+ #define  _NEXT 0XD9,1  
+ #define  _NOMINCAL 0XDA,1  
+ #define  _OBJECT 0XDB,1  
+ #define  _OBSTACLE 0XDC,1  
+ #define  _OF 0XDD,1  
+ #define  _OUT 0XDE,1  
+ #define  _OUTSIDE 0XDF,1  
+ #define  _PRESS 0XE0,1  
+ #define  _PROCESS 0XE1,1  
+ #define  _PURGE 0XE2,1  
+ #define  _RANGE 0XE3,1  
+ #define  _REAR 0XE4,1  
+ #define  _RECEIVED 0XE5,1  
+ #define  _RISING 0XE6,1  
+ #define  _SENT 0XE7,1  
+ #define  _SEQUENCE 0XE8,1  
+ #define  _SHE 0XE9,1  
+ #define  _SLEEP 0XEA,1  
+ #define  _SLOW 0XEB,1 
+ #define  _STABLE 0XEC,1  
+ #define  _START 0XED,1  
+ #define  _STEP 0XEE,1  
+ #define  _STEPPER 0XEF,1  
+ #define  _SWITCH 0XF0,1  
+ #define  _TELL 0XF1,1  
+ #define  _THE 0XF2,1  
+ #define  _THERE 0XF3,1  
+ #define  _THEY 0XF4,1  
+ #define  _TO  0XF5,1  
+ #define  _TOTAL 0XF6,1  
+ #define  _VENT 0XF7,1  
+ #define  _WE  0XF9,1  
+ #define  _WILL 0XFA,1  
+ #define  _WINDOW 0XFB,1  
+ #define  _YOU 0XFC,1  
+ #define  _ZONE 0XFD,1
 
-//Chip Select 2 Alaphabets
+//CHIP SELECT 2 ALAPHABETS
 
-//NATO Phonetic Alphabet
-#define _alpha 0xd0,2
-#define _bravo 0xd1,2
-#define _charlie 0xd2,2
-#define _delta 0xd3,2
-#define _echo 0xd4,2
-#define _foxtrot 0xd5,2
-#define _golf 0xd6,2
-#define _hotel 0xd7,2
-#define _india 0xd8,2
-#define _juliet 0xd9,2
-#define _kilo 0xda,2
-#define _lima 0xdb,2
-#define _mike 0xdc,2
-#define _november 0xdd,2
-#define _oscar 0xde,2
-#define _papa 0xdf,2
-#define _quebec 0xe0,2
-#define _romeo 0xe1,2
-#define _sierra 0xe2,2
-#define _tango 0xe3,2
-#define _uniform 0xe4,2
-#define _victor 0xe5,2
-#define _whiskey 0xe6,2
-#define _xray 0xe7,2
-#define _yankee 0xe8,2
-#define _zulu 0xe9,2
+//NATO PHONETIC ALPHABET
+#define _ALPHA 0XD0,2
+#define _BRAVO 0XD1,2
+#define _CHARLIE 0XD2,2
+#define _DELTA 0XD3,2
+#define _ECHO 0XD4,2
+#define _FOXTROT 0XD5,2
+#define _GOLF 0XD6,2
+#define _HOTEL 0XD7,2
+#define _INDIA 0XD8,2
+#define _JULIET 0XD9,2
+#define _KILO 0XDA,2
+#define _LIMA 0XDB,2
+#define _MIKE 0XDC,2
+#define _NOVEMBER 0XDD,2
+#define _OSCAR 0XDE,2
+#define _PAPA 0XDF,2
+#define _QUEBEC 0XE0,2
+#define _ROMEO 0XE1,2
+#define _SIERRA 0XE2,2
+#define _TANGO 0XE3,2
+#define _UNIFORM 0XE4,2
+#define _VICTOR 0XE5,2
+#define _WHISKEY 0XE6,2
+#define _XRAY 0XE7,2
+#define _YANKEE 0XE8,2
+#define _ZULU 0XE9,2
 
-//Transmission Word
-#define _bracket 0xea,2
-#define _break 0xeb,2
-#define _code 0xec,2
-#define _colon 0xed,2
-#define _comman 0xee,2
-#define _delete 0xef,2
-#define _end 0xf0,2
-#define _enter 0xf1,2
-#define _escape 0xf2,2
-#define _insert 0xf3,2
-#define _over 0xf4,2
-#define _pass 0xf5,2
-#define _pause 0xf6,2
-#define _period 0xf7,2
-#define _pound 0xf8,2
-#define _sequence 0xf9,2
-#define _space 0xfa,2
-#define _star 0xfb,2
-#define _start 0xfc,2
-#define transmit 0xfd,2
+//TRANSMISSION WORD
+#define _BRACKET 0XEA,2
+#define _BREAK 0XEB,2
+#define _CODE 0XEC,2
+#define _COLON 0XED,2
+#define _COMMAN 0XEE,2
+#define _DELETE 0XEF,2
+#define _END 0XF0,2
+#define _ENTER 0XF1,2
+#define _ESCAPE 0XF2,2
+#define _INSERT 0XF3,2
+#define _OVER 0XF4,2
+#define _PASS 0XF5,2
+#define _PAUSE 0XF6,2
+#define _PERIOD 0XF7,2
+#define _POUND 0XF8,2
+#define _SEQUENCE 0XF9,2
+#define _SPACE 0XFA,2
+#define _STAR 0XFB,2
+#define _START 0XFC,2
+#define TRANSMIT 0XFD,2
 
 
 #endif

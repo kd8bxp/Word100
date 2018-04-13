@@ -3,34 +3,34 @@
 
 #include "Arduino.h"
 
-//Chip Select 2 Alaphabets
+//CHIP SELECT 2 ALAPHABETS
 
-//French
-#define _a 0x34,2  
-#define _b 0x35,2
-#define _c 0x36,2
-#define _d 0x37,2
-#define _e 0x38,2
-#define _f 0x39,2
-#define _g 0x3a,2
-#define _h 0x3b,2
-#define _i 0x3c,2
-#define _j 0x3d,2
-#define _k 0x3e,2
-#define _l 0x3f,2
-#define _m 0x40,2
-#define _n 0x41,2
-#define _o 0x42,2
-#define _p 0x43,2
-#define _q 0x44,2
-#define _r 0x45,2
-#define _s 0x46,2
-#define _t 0x47,2
-#define _u 0x48,2
-#define _v 0x49,2
-#define _w 0x4a,2
-#define _x 0x4b,2
-#define _y 0x4c,2
-#define _z 0x4d,2
+//FRENCH
+#define _A 0X34,2  
+#define _B 0X35,2
+#define _C 0X36,2
+#define _D 0X37,2
+#define _E 0X38,2
+#define _F 0X39,2
+#define _G 0X3A,2
+#define _H 0X3B,2
+#define _I 0X3C,2
+#define _J 0X3D,2
+#define _K 0X3E,2
+#define _L 0X3F,2
+#define _M 0X40,2
+#define _N 0X41,2
+#define _O 0X42,2
+#define _P 0X43,2
+#define _Q 0X44,2
+#define _R 0X45,2
+#define _S 0X46,2
+#define _T 0X47,2
+#define _U 0X48,2
+#define _V 0X49,2
+#define _W 0X4A,2
+#define _X 0X4B,2
+#define _Y 0X4C,2
+#define _Z 0X4D,2
 
 #endif

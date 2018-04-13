@@ -63,9 +63,9 @@ class Word100 {
 private:
     int _cs;
     int sayPeriod(int _period);
-	int _sayDigits[10] = {_zero,_one,_two,_three,_four,_five,_six,_seven,_eight,_nine};
-	int _sayDecades[11] = {0x00,0x00,_twenty,_thirty,_forty,_fifty,_sixty,_seventy,_eighty,_ninety};
-	int _sayTens[11] = {_ten,_eleven,_twelve,_thirteen,_fourteen,_fifteen,_sixteen,_seventeen,_eighteen,_nineteen};
+		int _sayDigits[10] = {_ZERO,_ONE,_TWO,_THREE,_FOUR,_FIVE,_SIX,_SEVEN,_EIGHT,_NINE};
+	int _sayDecades[11] = {0x00,0x00,_TWENTY,_THIRTY,_FORTY,_FIFTY,_SIXTY,_SEVENTY,_EIGHTY,_NINETY};
+	int _sayTens[11] = {_TEN,_ELEVEN,_TWELVE,_THIRTEEN,_FOURTEEN,_FIFTEEN,_SIXTEEN,_SEVENTEEN,_EIGHTEEN,_NINETEEN};
 	int _hundreds;
 	int _tens;
 	int _number;

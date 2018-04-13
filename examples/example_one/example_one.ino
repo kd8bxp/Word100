@@ -41,8 +41,8 @@ Mar 19, 2018 - Cleaned up code a bit. Found a few words that didn't have undersc
 #define CS_PIN 10
 Word100 Word100(CS_PIN); //cs pin
 
-int sentence[] = {_one, _two, _three, _four, _five, _six, _seven, _eight, _nine, _ten};
-int sentence2[] = {_alert, _alert, _intruder, _in, _zone, _two};
+int sentence[] = {_ONE, _TWO, _THREE, _FOUR, _FIVE, _SIX, _SEVEN, _EIGHT, _NINE, _TEN};
+int sentence2[] = {_ALERT, _ALERT, _INTRUDER, _IN, _ZONE, _TWO};
 
 void setup() {
   
@@ -71,7 +71,7 @@ delay(1000); //wait for one second
 delay(1000);
 
 //say all the words. using the words as counters
-for (int i = _colour; i < _zone; i++) {
+for (int i = _COLOUR; i < _ZONE; i++) {
   Word100.say(i);
 }
 
@@ -79,8 +79,8 @@ delay(1000);
 
 //we can just call say(xxx)
 
-Word100.say(_red);
-Word100.say(_alert);
+Word100.say(_RED);
+Word100.say(_ALERT);
 delay(1000);
 
 while(1);

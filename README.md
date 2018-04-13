@@ -7,7 +7,9 @@ http://www.engineeringshock.com/100-word-arduino-audio-shield.html
 
 ## Installation
 
-Remove the -master from the file name, unzip and move folder to your Arduino library folder.  
+NEW Way: This library is now included in the Arduino Library manager, it's recommended to use the manager and look for Word100. This will let you receive updates quickly.  
+  
+OLD Way: Remove the -master from the file name, unzip and move folder to your Arduino library folder.  
 
 ## Versions
 
@@ -19,6 +21,7 @@ versioning. V1.5 now becomes v2.1.0 since it was a major change at the time.
 See Information_README.txt for minor changes.  
 Library version 3.0.0 - Mar 19, 2018 Major change after finding some issues with LBT and 100+ Word Shield with HAM chip.  
 New version has the three variations split into three different libraries, see below for more information.  
+Version 4.0.0 - Apr 13, 2018 - All words are now UPPERCASE and use a underscore. This fixes a problem I found with some other libraries.  
 
 ## Usage
 
