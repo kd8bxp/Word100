@@ -89,9 +89,9 @@ long num;
 void sayperiod(int period)
 {
 
-int LBTdigits[] = {_zero,_one,_two,_three,_four,_five,_six,_seven,_eight,_nine};
-int LBTdecades[] = {0x00,0x00,_twenty,_thirty,_forty,_fifty,_sixty,_seventy,_eighty,_ninety};
-int LBTtens[] = {_ten,_eleven,_twelve,_thirteen,_fourteen,_fifteen,_sixteen,_seventeen,_eighteen,_nineteen};
+int LBTdigits[] = {_ZERO,_ONE,_TWO,_THREE,_FOUR,_FIVE,_SIX,_SEVEN,_EIGHT,_NINE};
+int LBTdecades[] = {0x00,0x00,_TWENTY,_THIRTY,_FORTY,_FIFTY,_SIXTY,_SEVENTY,_EIGHTY,_NINETY};
+int LBTtens[] = {_TEN,_ELEVEN,_TWELVE,_THIRTEEN,_FOURTEEN,_FIFTEEN,_SIXTEEN,_SEVENTEEN,_EIGHTEEN,_NINETEEN};
 
 String tenplus[] = {"ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
 String decades[] = {"","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
@@ -164,7 +164,7 @@ void saynumber(long number) {
   
 if (number == 0) {
   
-  Word100.say(_zero);   //special case for zero
+  Word100.say(_ZERO);   //special case for zero
   return(0);
 }
 
@@ -174,7 +174,7 @@ period = number / MILLION;
 
 if (period != 0) {
                   sayperiod(period);
-                  Word100.say(_million);
+                  Word100.say(_MILLION);
                   Serial.print("million");
                   Serial.print(" ");
                   number = number - period*MILLION;
@@ -185,7 +185,7 @@ period = number / THOUSAND;
 
 if (period != 0) {
                  sayperiod(period);
-                 Word100.say(_thousand);
+                 Word100.say(_THOUSAND);
                  Serial.print("thousand");
                  Serial.print(" ");
                  number = number - period*THOUSAND;

@@ -57,31 +57,31 @@ This program is free software: you can redistribute it and/or modify
 //use Word100lbt for the Little Buddy talker
 Word100lbt Word100(CS_PIN); //cs pin 
 
-int sentence[] = {_one, _two, _three, _four, _five, _six, _seven, _eight, _nine, _ten};
-int sentence2[] = {_alert, _alert, _intruder, _in, _zone, _two};
+int sentence[] = {_ONE, _TWO, _THREE, _FOUR, _FIVE, _SIX, _SEVEN, _EIGHT, _NINE, _TEN};
+int sentence2[] = {_ALERT, _ALERT, _INTRUDER, _IN, _ZONE, _TWO};
 
 //In This example we have a multidensional array, with the first number being the word to be said, and the 2nd number the delay to wait for saying that word.
 //This works but isn't pretty to look at. 
 int timings[10][10] = {
-  {_one, 100}, //100 is too short
-  {_two, 500},
-  {_three, 300}, 
-  {_four, 350}, //350 is too short
-  {_five, 700},
-  {_six, 400},
-  {_seven, 700},
-  {_eight, 700},
-  {_nine, 100}, //100 is too short
-  {_ten, 700}
+  {_ONE, 100}, //100 is too short
+  {_TWO, 500},
+  {_THREE, 300}, 
+  {_FOUR, 350}, //350 is too short
+  {_FIVE, 700},
+  {_SIX, 400},
+  {_SEVEN, 700},
+  {_EIGHT, 700},
+  {_NINE, 100}, //100 is too short
+  {_TEN, 700}
 };
 
 int timings2[6][6] = {
-  {_alert, 400},
-  {_alert, 400},
-  {_intruder, 700},
-  {_in, 200},
-  {_zone, 650},
-  {_two, 700}
+  {_ALERT, 400},
+  {_ALERT, 400},
+  {_INTRUDER, 700},
+  {_IN, 200},
+  {_ZONE, 650},
+  {_TWO, 700}
 };
 
 //You can play around with various words and timings here.

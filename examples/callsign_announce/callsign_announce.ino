@@ -45,8 +45,8 @@ Cleaned this code up a little.
 //Use Word100ham for the secondary "ham" chip of the 100+ Word Shield
 Word100ham Word100(CS_PIN); //cs pin
 
-int sentence[] = {_k, _d, _8, _b, _x, _p};
-int sentence2[] = {_kilo, _delta, _eight, _bravo, _xray, _papa};
+int sentence[] = {_K, _D, _8, _B, _X, _P};
+int sentence2[] = {_KILO, _DELTA, _EIGHT, _BRAVO, _XRAY, _PAPA};
 
 void setup() {
   // put your setup code here, to run once:
@@ -75,7 +75,7 @@ delay(1000); //wait for 1 second
 delay(1000);
 
 //say all the words. using the words as counters
-for (int i = _a; i < _watts + 1; i++) {
+for (int i = _A; i < _WATTS + 1; i++) {
   Word100.say(i);
 }
 
@@ -83,8 +83,8 @@ delay(1000);
 
 //we can just call say(xxx)
 
-Word100.say(_one);
-Word100.say(_million);
+Word100.say(_ONE);
+Word100.say(_MILLION);
 
 while(1);
 }

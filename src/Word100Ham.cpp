@@ -92,7 +92,7 @@ void Word100ham::say(int value)    // Calling this function reads words individu
 int Word100ham::sayMinutes(long number) {
 if (number == 0) {
   
-  Word100ham::say(_zero);   //special case for zero
+  Word100ham::say(_ZERO);   //special case for zero
    return 0;
 }
 
@@ -109,7 +109,7 @@ if (number == 0) {
 	    
        _period = _period - _tens*TEN; } else {
       
-	      Word100ham::say(_zero);
+	      Word100ham::say(_ZERO);
 		
        }
           
@@ -123,7 +123,7 @@ if (number == 0) {
 int Word100ham::sayHours(long number) {
 if (number == 0) {
   
-  	 Word100ham::say(_zero);   //special case for zero
+  	 Word100ham::say(_ZERO);   //special case for zero
 	
   return 0;
 }
@@ -151,7 +151,7 @@ int _hundreds = _period / HUNDRED;
 if (_hundreds != 0) {
 
 	Word100ham::say(_sayDigits[_hundreds]);
-	Word100ham::say(_hundred);
+	Word100ham::say(_HUNDRED);
 	
 	_period = _period - (_hundreds * HUNDRED);
 	}
@@ -190,7 +190,7 @@ int _period;
 if (_period != 0) {
 	
 	Word100ham::sayPeriod(_period);
-	Word100ham::say(_million);
+	Word100ham::say(_MILLION);
 	
 	number=number - _period * MILLION;
 	}
@@ -199,7 +199,7 @@ _period = number / THOUSAND;
 if (_period != 0) {
 	
 	Word100ham:sayPeriod(_period);
-	Word100ham::say(_thousand);
+	Word100ham::say(_THOUSAND);
 	
 	number = number - _period * THOUSAND;
 }

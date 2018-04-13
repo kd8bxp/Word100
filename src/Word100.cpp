@@ -95,7 +95,7 @@ void Word100::say(int value)    // Calling this function reads words individuall
 int Word100::sayMinutes(long number) {
 if (number == 0) {
     
-  Word100::say(_zero);   //special case for zero
+  Word100::say(_ZERO);   //special case for zero
    return 0;
 }
 
@@ -109,7 +109,7 @@ if (number == 0) {
    if (_tens > 1) {
       	 Word100::say(_sayDecades[_tens]);
 	     _period = _period - _tens*TEN; } else {
-           Word100::say(_zero);
+           Word100::say(_ZERO);
 		       }
           
    if (_period == 0)  { return 0; } else {
@@ -122,7 +122,7 @@ if (_AMPM == 1) {
 int Word100::sayHours(long number) {
 if (number == 0) {
    
-	 Word100::say(_zero);   //special case for zero
+	 Word100::say(_ZERO);   //special case for zero
 	 return 0;
 }
 
@@ -130,7 +130,7 @@ int _period = number;
 
 if (_AMPM == 1) {
  if (_period >= 13) { _period = _period -12;}
- if (number < 12) {_sayAMPM = _am_; } else {_sayAMPM = _pm_; }
+ if (number < 12) {_sayAMPM = _AM_; } else {_sayAMPM = _PM_; }
 }
 
   int _tens = _period / TEN;
@@ -158,7 +158,7 @@ int _hundreds = _period / HUNDRED;
 if (_hundreds != 0) {
 		
 	Word100::say(_sayDigits[_hundreds]);
-	Word100::say(_hundred);
+	Word100::say(_HUNDRED);
 	_period = _period - (_hundreds * HUNDRED);
 	}
 
@@ -190,14 +190,14 @@ int _period;
 	_period = number / MILLION;
 if (_period != 0) {
 	Word100::sayPeriod(_period);
-	Word100::say(_million);
+	Word100::say(_MILLION);
 	number=number - _period * MILLION;
 	}
 
 _period = number / THOUSAND;
 if (_period != 0) {
 	Word100:sayPeriod(_period);
-	Word100::say(_thousand);
+	Word100::say(_THOUSAND);
 	number = number - _period * THOUSAND;
 }
 Word100::sayPeriod(number);
