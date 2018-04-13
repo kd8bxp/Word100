@@ -1,7 +1,7 @@
-#ifndef DEFAULT_H
-#define DEFAULT_H
+#ifndef Default_h
+#define Default_h
 
-#INCLUDE "ARDUINO.H"
+#include "Arduino.h"
 
 #define MILLION  1000000
 #define THOUSAND 1000
