@@ -6,31 +6,31 @@
 //CHIP SELECT 2 ALAPHABETS
 
 //ENGLISH MALE
-#define _A 0X00,2  
-#define _B 0X01,2
-#define _C 0X02,2
-#define _D 0X03,2
-#define _E 0X04,2
-#define _F 0X05,2
-#define _G 0X06,2
-#define _H 0X07,2
-#define _I 0X08,2
-#define _J 0X09,2
-#define _K 0X0A,2
-#define _L 0X0B,2
-#define _M 0X0C,2
-#define _N 0X0D,2
-#define _O 0X0E,2
-#define _P 0X0F,2
-#define _Q 0X10,2
-#define _R 0X11,2
-#define _S 0X12,2
-#define _T 0X13,2
-#define _U 0X14,2
-#define _V 0X15,2
-#define _W 0X16,2
-#define _X 0X17,2
-#define _Y 0X18,2
-#define _Z 0X19,2
+#define _A 0x00,2  
+#define _B 0x01,2
+#define _C 0x02,2
+#define _D 0x03,2
+#define _E 0x04,2
+#define _F 0x05,2
+#define _G 0x06,2
+#define _H 0x07,2
+#define _I 0x08,2
+#define _J 0x09,2
+#define _K 0x0A,2
+#define _L 0x0B,2
+#define _M 0x0C,2
+#define _N 0x0D,2
+#define _O 0x0E,2
+#define _P 0x0F,2
+#define _Q 0x10,2
+#define _R 0x11,2
+#define _S 0x12,2
+#define _T 0x13,2
+#define _U 0x14,2
+#define _V 0x15,2
+#define _W 0x16,2
+#define _X 0x17,2
+#define _Y 0x18,2
+#define _Z 0x19,2
 
 #endif
