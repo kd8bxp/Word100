@@ -183,7 +183,7 @@ if (_period == 0) { return(0); } else {
 int Word100::sayNumber(long number) {
 
 if (number == 0) {
-	Word100::say(_zero);
+	Word100::say(_ZERO);
 	return(0);
 	}
 int _period;
