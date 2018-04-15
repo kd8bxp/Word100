@@ -60,15 +60,15 @@ This program is free software: you can redistribute it and/or modify
 #define TIMEOFFSET -14400 //Find your Time Zone off set Here https://www.epochconverter.com/timezones OFF Set in Seconds
 #define AMPM 1 //1 = AM PM time, 0 = MILITARY/24 HR Time
 
-int LBTdigits[] = {_zero,_one,_two,_three,_four,_five,_six,_seven,_eight,_nine};
-int LBTdecades[] = {0x00,0x00,_twenty,_thirty,_forty,_fifty};
-int LBTtens[] = {_ten,_eleven,_twelve,_thirteen,_fourteen,_fifteen,_sixteen,_seventeen,_eighteen,_nineteen};
+int LBTdigits[] = {_ZERO,_ONE,_TWO,_THREE,_FOUR,_FIVE,_SIX,_SEVEN,_EIGHT,_NINE};
+int LBTdecades[] = {0x00,0x00,_TWENTY,_THIRTY,_FORTY,_FIFTY};
+int LBTtens[] = {_TEN,_ELEVEN,_TWELVE,_THIRTEEN,_FOURTEEN,_FIFTEEN,_SIXTEEN,_SEVENTEEN,_EIGHTEEN,_NINETEEN};
 int hundreds;
 int tens;
 
 
 
-int sentence[] = {_the, _time, _is };
+int sentence[] = {_THE, _TIME, _IS };
 WiFiUDP ntpUDP;
 Word100lbt Word100(D0); //cs pin
 
@@ -108,8 +108,8 @@ void sayTime() {
 
 if (AMPM) {
   if (timeClient.getHours() < 12) {
-    Word100.say(_am_); } else {
-    Word100.say(_pm_);   }
+    Word100.say(_AM_); } else {
+    Word100.say(_PM_);   }
  }  
 }
 
@@ -122,7 +122,7 @@ int sayMinute(long number) {
 
 if (number == 0) {
   
-  Word100.say(_zero);   //special case for zero
+  Word100.say(_ZERO);   //special case for zero
   return 0;
 }
 int period;
@@ -135,7 +135,7 @@ period = number;
    if (tens > 1) {
        Word100.say(LBTdecades[tens]);  
        period = period - tens*TEN; } else {
-       Word100.say(_zero);
+       Word100.say(_ZERO);
        }
           
    if (period == 0)  { return 0; } else {
@@ -146,7 +146,7 @@ int sayHours(long number) {
 
 if (number == 0) {
   
-  Word100.say(_zero);   //special case for zero
+  Word100.say(_ZERO);   //special case for zero
   return 0;
 }
 int period;

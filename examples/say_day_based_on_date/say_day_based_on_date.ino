@@ -41,8 +41,8 @@ https://kd8bxp.blogspot.com/
 //Word100ham Word100(CS_PIN); //use with 100+ Word Shield Ham chip
 Word100 Word100(CS_PIN); //use with 100+ Word Shield standard chip
 
-int days[] = {_sat, _sun, _mon, _tue, _wed, _thr, _fri};
-int months[] = {_jan, _feb, _mar, _apr, _may, _june, _july, _aug, _sep, _oct, _nov, _dec};
+int days[] = {_SAT, _SUN, _MON, _TUE, _WED, _THR, _FRI};
+int months[] = {_JAN, _FEB, _MAR, _APR, _MAY, _JUNE, _JULY, _AUG, _SEP, _OCT, _NOV, _DEC};
 
 int day = 25; //25th day of month
 int month = 3; //March
@@ -77,7 +77,7 @@ void setup() {
   sayMonth(month); //Number of the Month (1 = Jan, 12 = Dec, ect)
   //Word100.say(months[month-1]); //Will also work for now
   Word100.sayNumber(day); //this is just a number
-  Word100.say(_twenty); //probably will add a sayYear function later
+  Word100.say(_TWENTY); //probably will add a sayYear function later
   Word100.sayNumber(year); //two digit number for the year.
 }
 
