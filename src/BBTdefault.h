@@ -385,5 +385,285 @@
 #define _START 0xFC,2
 #define _TRANSMIT 0xFD,2
 
-
+//CURRENTLY UNKNOWN
+#define _POINT
+#define _PERIOD
+#define _ISH
+#define _ER
+#define _LESS
+#define _ABLE
+#define _UN
+#define _DE
+#define _MULTI
+#define _BYTE
+#define _BIT
+#define _WORD
+#define _ARDUINO
+#define _LEONARDO
+#define _UNO
+#define _DECI
+#define _MINIMUM
+#define _MAXIMUM
+#define _FIRST
+#define _SECOND
+#define _THIRD
+#define _FOURTH
+#define _FIFTH
+#define _SIXTH
+#define _SEVENTH
+#define _EIGHTN
+#define _NINTH
+#define _TENTH
+#define _REACTOR
+#define _LINE
+#define _SENSORS
+#define _ALL
+#define _SYSTEMS
+#define _LEG
+#define _ARM
+#define _HAND
+#define _FEET
+#define _HEAD
+#define _BODY
+#define _OFFLINE
+#define _HEAT
+#define _ENEMY
+#define _INCOMING
+#define _VISION
+#define _SINK
+#define _ROGER
+#define _REPEAT
+#define _COMMAND
+#define _RESPOND
+#define _REGROUP
+#define _ASSHOLE
+#define _FUCK
+#define _DANGER
+#define _EXTERMINATE
+#define _MILES
+#define _SPEAK
+#define _CHOOSE
+#define _CHOICE
+#define _BOTH
+#define _EITHER
+#define _NEITHER
+#define _ZED
+#define _CAPTAIN
+#define _SCIENCE
+#define _OFFICER
+#define _COMMUNICATIONS
+#define _ENGINEERING
+#define _BRIDGE
+#define _SICK
+#define _BAY
+#define _ERROR
+#define _PASCALS
+#define _HECTO
+#define _CYCLONIC
+#define _ANTI
+#define _TYPHOON
+#define _HURRICANE
+#define _OCCLUDED
+#define _SNOW
+#define _SLEET
+#define _RAIN
+#define _SUNNY
+#define _CLOUDY
+#define _FOG
+#define _VISIBILITY
+#define _PAGE
+#define _SHIFT
+#define _KEY
+#define _TAB
+#define _HEARTS
+#define _CLUBS
+#define _SPADES
+#define _DIAMONDS
+#define _KING
+#define _QUEEN
+#define _JACK
+#define _JOKER
+#define _TOWER
+#define _DOOR
+#define _PUMP
+#define _BOILER
+#define _HOT_TUB
+#define _FILTER
+#define _BACK
+#define _DOOR_BELL
+#define _VALVE
+#define _WAY
+#define _SIDE
+#define _FRONT
+#define _PRESSED
+#define _OPENED
+#define _LOWERED
+#define _WINDER
+#define _SHUTTER
+#define _SLEEPING
+#define _DINING
+#define _KITCHEN
+#define _SALON
+#define _OFFICE
+#define _GARDEN
+#define _STREET
+#define _ROOF
+#define _WALL
+#define _MOWER
+#define _WATER
+#define _BALCONY
+#define _POOL
+#define _HEATER
+#define _CENTRAL
+#define _FLOOR
+#define _BARN
+#define _STABLE
+#define _ROUTER
+#define _MODEM
+#define _COMPUTER
+#define _SENSOR
+#define _CLOUD
+#define _REBOOT_NETWORK
+#define _RASPBERRY
+#define _PIE
+#define _WITH
+#define _STAIRS
+#define _AGENDA
+#define _APARTMENT
+#define _VISITOR
+#define _GUEST
+#define _DINNER
+#define _BREAKFAST
+#define _KIDS
+#define _ADULTS
+#define _ANIMAL
+#define _CAT
+#define _SHEEP
+#define _DOG
+#define _SOMEONE
+#define _KIAORA
+#define _PISS
+#define _DAMN
+#define _HALF
+#define _QUARTER
+#define _CANADA
+#define _AUSTRIA
+#define _GERMANY
+#define _RUSSIA
+#define _ITALY
+#define _SPAIN
+#define _JAPAN
+#define _PRE
+#define _POST
+#define _GRAYS
+#define _SIEVERTS
+#define _TESLA
+#define _NOZZLE
+#define _FILAMENT
+#define _tHREEMA
+#define _SIGNAL
+#define _WHATSAPP
+#define _TELEGRAM
+#define _FACEBOOK
+#define _GOOGLE
+#define _TWITTER
+#define _DIASPORA
+#define _YOUTUBE
+#define _NIBBLE
+#define _AGENDA
+#define _APARTMENT
+#define _CHEESE
+#define _FIRE
+#define _EVACUATE
+#define _REQUEST
+#define _USER
+#define _PAST
+#define _SHOP
+#define _SAY
+#define _FUEL
+#define _MANOUVER
+#define _TARGET
+#define _SURFACE
+#define _BOO
+#define _SCARED
+#define _ENIGMA
+#define _ENCRYPTION
+#define _APOLLO
+#define _KEYBOARD
+#define _GUIDANCE
+#define _BEER
+#define _PIZZA
+#define _ALCHOL
+#define _SOLDERING
+#define _IRON
+#define _DRINK
+#define _BAR
+#define _OVERLORD
+#define _HUNT
+#define _GREAT
+#define _COCONUT
+#define _APOCALYPSE
+#define _KITTY
+#define _CYANIDE
+#define _ROCK
+#define _PAPER
+#define _SCISSORS
+#define _LIZARD
+#define _SPOCK
+#define _ESCAPE
+#define _ROOM
+#define _JESUS
+#define _GOD
+#define _SIR
+#define _MADAM
+#define _CARRIER
+#define _ESTBLISHED
+#define _ARRAY
+#define _TREE
+#define _FLOWER
+#define _LAKE
+#define _BEACH
+#define _SEA
+#define _GRASS
+#define _PALM
+#define _RIVER
+#define _STREET
+#define _PATH
+#define _NARROW
+#define _WIDE
+#define _LOG_ON
+#define _LOG_OUT
+#define _SPEAKERS
+#define _JESTER
+#define _ICY
+#define _SMILING
+#define _WORDS
+#define _IDENTIFIED
+#define 
+#define 
+#define
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+#define 
+ 
 #endif
