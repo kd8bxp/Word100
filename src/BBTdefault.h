@@ -560,7 +560,7 @@
 #define _TESLA
 #define _NOZZLE
 #define _FILAMENT
-#define _tHREEMA
+#define _THREEMA
 #define _SIGNAL
 #define _WHATSAPP
 #define _TELEGRAM
@@ -639,31 +639,57 @@
 #define _SMILING
 #define _WORDS
 #define _IDENTIFIED
-#define 
-#define 
-#define
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
-#define 
- 
+#define _GET_DUNKED_ON
+#define _BATTERY
+#define _CAMERA
+#define _CHARGE
+#define _CHARGING
+#define _FAN
+#define _GAIN
+#define _INTERNET
+#define _LOCKED
+#define _MEMORY
+#define _OUTLET
+#define _POWER
+#define _PRINT
+#define _RADIO
+#define _RECALL
+#define _REFLECTED
+#define _RESUME
+#define _ROTATE
+#define _SCAN
+#define _SET
+#define _TUNE
+#define _VOLUME
+#define _AUS
+#define _CHINA
+#define _UNITED
+#define _STATES
+#define _THINKING
+#define _INDEX
+#define _GROOVY
+#define _RISE
+#define _SET
+#define _SUN_ //NOT SAME AS SUNDAY THIS IS THE BIG WHITE BALL IN SPACE
+#define _BEFORE
+#define _AFTER
+#define _NOW
+#define _WAS
+#define _BELEUCHTUNG
+#define _LICHT
+#define _STECKDOSE
+#define _WOHNZIMMER
+#define _FLUR
+#define _KINDERZIMMER
+#define _KUCHE //NEED DOTS ABOVE U
+#define _BAD
+#define _ARBEITSZIMMERUNTIL //??
+#define _GUST
+#define _STEADY
+#define _CALM
+#define _CREAMY
+
+
+
+
 #endif
