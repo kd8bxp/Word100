@@ -62,7 +62,7 @@ v5.0.0 May 4th 2018, updated for Big Buddy Talker - LeRoy Miller (c) 2018
 
 class Word100bbt {
 private:
-    int _cs1,_cs2,_cs3,_cs4;
+    int _cs[4];
     int sayPeriod(int _period);
 	int _sayDigits[10] = {_ZERO,_ONE,_TWO,_THREE,_FOUR,_FIVE,_SIX,_SEVEN,_EIGHT,_NINE};
 	int _sayDecades[11] = {0x00,0x00,_TWENTY,_THIRTY,_FORTY,_FIFTY,_SIXTY,_SEVENTY,_EIGHTY,_NINETY};
@@ -74,7 +74,7 @@ private:
 	int _sayAMPM;
 	int _wait;
 public:
-Word100lbt(int cs1, cs2, cs3, cs4);
+Word100bbt(int cs1, cs2, cs3, cs4);
     void begin();
     void say(int _value, int _pin);
 	int sayNumber(long number);

@@ -46,10 +46,10 @@ May 4, 2018 Updated for the Big Buddy Talker, LeRoy Miller (2018 (c))
 
 
 Word100lbt::Word100bbt(int cs1, cs2, cs3, cs4) {
-_cs1 = cs1;
-_cs2 = cs2;
-_cs3 = cs3;
-_cs4 = cs4;
+_cs[0] = cs1;
+_cs[1] = cs2;
+_cs[2] = cs3;
+_cs[3] = cs4;
 Word100lbt::setAMPM(1);
 Word100lbt:setDelay(700); //default delay is about 700 milliseconds
 }
@@ -74,10 +74,10 @@ void Word100bbt::say(int value, int pin)    // Calling this function reads words
   
   delay(7);
   // Transmit Data
-  digitalWrite(_cs,LOW);
+  digitalWrite(_cs[pin-1],LOW);
   SPI.transfer(_PLAY);
   SPI.transfer(value);
-  digitalWrite(_cs,HIGH);
+  digitalWrite(_cs[pin-1],HIGH);
   delay(_wait); 
   
 }
