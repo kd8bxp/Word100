@@ -23,6 +23,7 @@ Library version 3.0.0 - Mar 19, 2018 Major change after finding some issues with
 New version has the three variations split into three different libraries, see below for more information.  
 Version 4.0.0 - Apr 13, 2018 - All words are now UPPERCASE and use a underscore. This fixes a problem I found with some other libraries.  
 Version 5.0.0 - May 5, 2018 - Big Buddy Talker added with over 1000+ words  
+http://www.engineeringshock.com/the-big-buddy-talker-project-page.html  
 
 ## Usage
 
@@ -33,6 +34,7 @@ include the library
 ```#include "Word100.h"; //for the 100+ Word Shield with standard chip```   
 ```#include "Word100Ham.h"; //for the 100+ Word Shield with Ham chip```  
 ```#include "Word100LBT.h"; //for the LBT (Little Buddy Talker)```  
+```#include "Word100BBT.h"; //for the BBT (Big Buddy Talker)```  
 invoke the class for your device:  
 ```Word100 Word100(10);```   
 or for the custom ham radio chip:   
@@ -40,7 +42,7 @@ or for the custom ham radio chip:
 For Little Buddy Talker (LBT) invoke:  
 ```Word100lbt Word100(10);```  
 For Big Buddy Talker (BBT) invoke:  
-```Word100bbt Word100(7,8,9,10);```
+```Word100bbt Word100(7,8,9,10);```  
 in setup begin the class:   
 ```Word100.begin();```  
 say your word - examples show how to do this from an array, but...   
