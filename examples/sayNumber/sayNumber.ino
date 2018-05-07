@@ -45,18 +45,37 @@ thousands or millions ended in zero.
  * The HAM chip is missing AM and PM, was setAMPM removed, and times are only
  * given in 24 hour/Military style
  */
- 
+ /*
+  * May 6, 2018 Updated Example to work with BBT
+  * 
+  * Big Buddy Talker Arduino UNO Hookup
+ * BBT CS1 to Arduino PIN 7 
+ * BBT CS2 to Arduino PIN 8
+ * BBT CS3 to Arduino PIN 9
+ * BBT CS4 to Arduino PIN 10 
+ * BBT SC to Arduino PIN 13 
+ * BBT DI to Arduino PIN 11
+  */
+  
 //Uncomment for the device of your choice.
 //#include "Word100LBT.h"; //If using a Little Buddy Talker
 //#include "Word100Ham.h"; //Works with the 100+ Word Shield and Ham chip
-#include "Word100.h"; //Works with the 100+ Word Shield standard chip
+//#include "Word100.h"; //Works with the 100+ Word Shield standard chip
+#include "Word100BBT.h"; //Use for the Big Buddy Talker
 
-#define CS_PIN 10 //CS pin of your device.
+#define CS_PIN 10 //CS pin of your device. (Used for 100+ Word Shield, and LBT)
 
+//The Big Buddy Talker uses 4 CS select pins.
+#define CS1_PIN 7
+#define CS2_PIN 8
+#define CS3_PIN 9
+#define CS4_PIN 10
+
+//Uncomment to match your device.
 //Word100lbt Word100(CS_PIN); //use Word100lbt for the Little Buddy talker
 //Word100ham Word100(CS_PIN); //use with 100+ Word Shield Ham chip
-Word100 Word100(CS_PIN); //use with 100+ Word Shield standard chip
-
+//Word100 Word100(CS_PIN); //use with 100+ Word Shield standard chip
+Word100bbt Word100(CS1_PIN, CS2_PIN, CS3_PIN, CS4_PIN); //cs pins
 
 void setup() {
   

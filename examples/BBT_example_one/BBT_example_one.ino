@@ -40,22 +40,22 @@ Mar 19, 2018 - Cleaned up code a bit. Found a few words that didn't have undersc
 May 5, 2018 - Updated for BBT
  */
  
-/* Arduino UNO Hookup
- * LBT CS1 to Arduino PIN 7 
- * LBT CS2 to Arduino PIN 8
- * LBT CS3 to Arduino PIN 9
- * LBT CS4 to Arduino PIN 10 
- * LBT SC to Arduino PIN 13 
- * LBT DI to Arduino PIN 11
+/* Big Buddy Talker Arduino UNO Hookup
+ * BBT CS1 to Arduino PIN 7 
+ * BBT CS2 to Arduino PIN 8
+ * BBT CS3 to Arduino PIN 9
+ * BBT CS4 to Arduino PIN 10 
+ * BBT SC to Arduino PIN 13 
+ * BBT DI to Arduino PIN 11
  *
  *May 5, 2018 - BBT hasn't been tested with the D1 Mini yet, I believe these pins should work.
  * Wemos D1 Mini and Other ESP8266 Based Devices
- * LBT CS1 to D1
- * LBT CS2 to D2
- * LBT CS3 to D3
- * LBT CS4 to D0 
- * LBT SC to D5
- * LBT DI to D7
+ * BBT CS1 to D1
+ * BBT CS2 to D2
+ * BBT CS3 to D3
+ * BBT CS4 to D0 
+ * BBT SC to D5
+ * BBT DI to D7
  * 
  * Some ESP8266 devices need the GPIO PIN number. 
  */
@@ -68,7 +68,6 @@ May 5, 2018 - Updated for BBT
 #define CS3_PIN 9
 #define CS4_PIN 10
 
-//use Word100lbt for the Little Buddy talker
 Word100bbt Word100(CS1_PIN, CS2_PIN, CS3_PIN, CS4_PIN); //cs pins 
 
 int sentence[] = {_ONE, _TWO, _THREE, _FOUR, _FIVE, _SIX, _SEVEN, _EIGHT, _NINE, _TEN};
