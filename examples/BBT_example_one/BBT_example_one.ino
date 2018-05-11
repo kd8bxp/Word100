@@ -73,6 +73,20 @@ Word100bbt Word100(CS1_PIN, CS2_PIN, CS3_PIN, CS4_PIN); //cs pins
 int sentence[] = {_ONE, _TWO, _THREE, _FOUR, _FIVE, _SIX, _SEVEN, _EIGHT, _NINE, _TEN};
 int sentence2[] = {_ALERT, _ALERT, _INTRUDER, _IN, _ZONE, _TWO};
 
+/* Because the defined word list contain both the location of the word and the chip number they are
+ *  on. The method below maybe a bit better for making sentences, although it looks a bit strange.
+ *  Remember:
+ *  _ONE is really 0x37,1
+ *  _TWO 0x38,1
+ *  _THREE 0x39,1
+ *  ect....
+ *  So an array would look something like this:
+ *  int sentence3[4][2] = {{0x37,1},{0x38,1},{0x39,1}};
+ *  We can try it below.....
+ */
+int sentence3[11][2] = {{_ONE}, {_TWO}, {_THREE}, {_FOUR}, {_FIVE}, {_SIX}, {_SEVEN}, {_EIGHT}, {_NINE}, {_TEN}};
+int sentence4[4][2] = {{0x37,1},{0x38,1},{0x39,1}}; //This will say ONE, Two, Three
+
 void setup() {
   
 Word100.begin();
@@ -85,19 +99,34 @@ void loop() {
   
   //say the first sentence (Count to Ten)
   Serial.print(arr_len(sentence));
-  for (int i = 0; i < arr_len(sentence); i++) {
-  Word100.say(sentence[i]);
+  for (int i = 0; i < arr_len(sentence); i=i+2) {
+  Word100.say(sentence[i],sentence[i+1]);
 }
 
-delay(1000); //wait for one second
+delay(500); 
 
 //say the second sentence (Alert Alert intruder in zone two)
  Serial.println(arr_len(sentence2));
- for (int i = 0; i < arr_len(sentence2); i++) {
- Word100.say(sentence2[i]);
+ for (int i = 0; i < arr_len(sentence2); i=i+2) {
+ Word100.say(sentence2[i],sentence2[i+1]);
 }
 
-delay(1000);
+delay(500);
+
+//say the third sentence (Count to Ten) Again...
+Serial.print(arr_len(sentence3));
+  for (int i = 0; i < arr_len(sentence3); i++) { //notice how this line changed from above.
+  Word100.say(sentence3[i][0],sentence3[i][1]);
+}
+
+delay(500);
+
+Serial.print(arr_len(sentence));
+  for (int i = 0; i < arr_len(sentence4); i++) { //notice how this line changed from above.
+  Word100.say(sentence4[i][0],sentence4[i][1]);
+}
+
+delay(500);
 
 //say all the words. 
 /*
@@ -107,7 +136,7 @@ delay(1000);
  */
 for (int chip = 1; chip <= 4; chip++) {
   for (int word = 0x00; word < 0xfd+1; word++) {
-  Word100.say(word,chip+1);
+  Word100.say(word,chip);
   }
 }
 
