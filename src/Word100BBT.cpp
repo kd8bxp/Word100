@@ -40,33 +40,35 @@ May 4, 2018 Updated for the Big Buddy Talker, LeRoy Miller (2018 (c))
 // DO from Ap23 optional S4 - Not used here
 // ** Add stop bit so that MCU knows then  the chip has stopped talking.  OUT1 is what you'll want to use
  
-#define _PLAY 0x98
+#define _PLAY_ 0x98
 #define _RAMPUP 0xA8 //COUT ramp up - this value never changes
 #define _RAMPDOWN 0xB8 //COUT ram down
 
 
-Word100lbt::Word100bbt(int cs1, cs2, cs3, cs4) {
+Word100bbt::Word100bbt(int cs1, int cs2, int cs3,int cs4) {
 _cs[0] = cs1;
 _cs[1] = cs2;
 _cs[2] = cs3;
 _cs[3] = cs4;
-Word100lbt::setAMPM(1);
-Word100lbt:setDelay(700); //default delay is about 700 milliseconds
+Word100bbt::setAMPM(1);
+Word100bbt:setDelay(700); //default delay is about 700 milliseconds
 }
 
 void Word100bbt::begin() {
 
   SPI.begin();             // Initialize SPI
   SPI.setClockDivider(SPI_CLOCK_DIV32); // low frequency SPI
-  pinMode(_cs,OUTPUT);    // Chip select pins is an output
-  digitalWrite(_cs,HIGH); // Set chip select to be HIGH (5v) by default.  The chip on the shield is selected when this line is brought low. 
+for (int __count=0;__count<4;__count++) {  
+pinMode(_cs[__count],OUTPUT);    // Chip select pins is an output
+  digitalWrite(_cs[__count],HIGH); // Set chip select to be HIGH (5v) by default.  The chip on the shield is selected when this line is brought low. 
   SPI.setBitOrder(MSBFIRST);  // OTP requires MSB first
   SPI.setDataMode(SPI_MODE0);  // Use MODE0, as all other modes to not work
-  delay(1000);   // One second delay
-  digitalWrite(_cs, LOW);
+  //delay(500);   // One second delay
+  digitalWrite(_cs[__count], LOW);
   SPI.transfer(_RAMPUP);
   SPI.transfer(0x00);
-  digitalWrite(_cs,HIGH);
+  digitalWrite(_cs[__count],HIGH);
+}
 }
 
 void Word100bbt::say(int value, int pin)    // Calling this function reads words individually
@@ -75,11 +77,11 @@ void Word100bbt::say(int value, int pin)    // Calling this function reads words
   delay(7);
   // Transmit Data
   digitalWrite(_cs[pin-1],LOW);
-  SPI.transfer(_PLAY);
+  SPI.transfer(_PLAY_);
   SPI.transfer(value);
   digitalWrite(_cs[pin-1],HIGH);
   delay(_wait); 
-  
+  //delay(700);
 }
 
 /* Portions of this code based on example by Matt Ganis (matt.ganis@gmail.com) or @mattganis on Twitter
@@ -88,7 +90,7 @@ void Word100bbt::say(int value, int pin)    // Calling this function reads words
  */
 
 int Word100bbt::sayMinutes(long number) {
-if (number == 0) {
+/*if (number == 0) {
     
   Word100bbt::say(_ZERO);   //special case for zero
    return 0;
@@ -112,10 +114,12 @@ if (number == 0) {
 			}
 if (_AMPM == 1) {
 	Word100bbt::say(_sayAMPM); }
+*/
 }
 
+
 int Word100bbt::sayHours(long number) {
-if (number == 0) {
+/*if (number == 0) {
    
 	 Word100bbt::say(_ZERO);   //special case for zero
 	 return 0;
@@ -144,10 +148,11 @@ if (_AMPM == 1) {
 		Word100bbt::say(_sayDigits[_period]);
 		
 	  }
+*/
 }
 
 int Word100bbt::sayPeriod(int _period) {
-
+/*
 int _hundreds = _period / HUNDRED;
 
 if (_hundreds != 0) {
@@ -173,10 +178,12 @@ if (_tens > 1) {
 if (_period == 0) { return(0); } else {
 	Word100bbt::say(_sayDigits[_period]);
 		}
+*/
 }
 
-int Word100bbt::sayNumber(long number) {
 
+int Word100bbt::sayNumber(long number) {
+/*
 if (number == 0) {
 	Word100bbt::say(_ZERO);
 	return(0);
@@ -195,8 +202,11 @@ if (_period != 0) {
 	Word100bbt::say(_THOUSAND);
 	number = number - _period * THOUSAND;
 }
+
 Word100bbt::sayPeriod(number);
+*/
 }
+
 
 void Word100bbt::setAMPM(bool AMPM) {
 _AMPM = AMPM;

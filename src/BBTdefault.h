@@ -103,7 +103,7 @@
 #define _4 0x3A,1
 #define _FIVE 0x3B,1
 #define _5 0x3B,1
-#define _SIx 0x3C,1
+#define _SIX 0x3C,1
 #define _6 0x3C,1
 #define _SEVEN 0x3D,1
 #define _7 0x3B,1
@@ -123,7 +123,7 @@
 #define _14 0x44,1
 #define _FIFTEEN 0x45,1
 #define _15 0x45,1
-#define _SIxTEEN 0x46,1
+#define _SIXTEEN 0x46,1
 #define _16 0x46,1
 #define _SEVENTEEN 0x47,1
 #define _17 0x47,1
@@ -139,7 +139,7 @@
 #define _40 0x4C,1
 #define _FIFTY 0x4D,1
 #define _50 0x4D,1
-#define _SIxTY 0x4E,1
+#define _SIXTY 0x4E,1
 #define _60 0x4E,1
 #define _SEVENTY 0x4F,1
 #define _70 0x4F,1

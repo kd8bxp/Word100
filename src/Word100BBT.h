@@ -64,9 +64,9 @@ class Word100bbt {
 private:
     int _cs[4];
     int sayPeriod(int _period);
-	int _sayDigits[10] = {_ZERO,_ONE,_TWO,_THREE,_FOUR,_FIVE,_SIX,_SEVEN,_EIGHT,_NINE};
-	int _sayDecades[11] = {0x00,0x00,_TWENTY,_THIRTY,_FORTY,_FIFTY,_SIXTY,_SEVENTY,_EIGHTY,_NINETY};
-	int _sayTens[11] = {_TEN,_ELEVEN,_TWELVE,_THIRTEEN,_FOURTEEN,_FIFTEEN,_SIXTEEN,_SEVENTEEN,_EIGHTEEN,_NINETEEN};
+	int _sayDigits[21] = {_ZERO,_ONE,_TWO,_THREE,_FOUR,_FIVE,_SIX,_SEVEN,_EIGHT,_NINE};
+	int _sayDecades[21] = {0x00,0x00,_TWENTY,_THIRTY,_FORTY,_FIFTY,_SIXTY,_SEVENTY,_EIGHTY,_NINETY};
+	int _sayTens[21] = {_TEN,_ELEVEN,_TWELVE,_THIRTEEN,_FOURTEEN,_FIFTEEN,_SIXTEEN,_SEVENTEEN,_EIGHTEEN,_NINETEEN};
 	int _hundreds;
 	int _tens;
 	int _number;
@@ -74,7 +74,7 @@ private:
 	int _sayAMPM;
 	int _wait;
 public:
-Word100bbt(int cs1, cs2, cs3, cs4);
+Word100bbt(int cs1, int cs2, int cs3, int cs4);
     void begin();
     void say(int _value, int _pin);
 	int sayNumber(long number);

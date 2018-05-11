@@ -1,5 +1,5 @@
-#ifndef default_h
-#define default_h
+#ifndef Default_h
+#define Default_h
 
 #include "Arduino.h"
 
@@ -121,7 +121,7 @@
 #define _14 0x44
 #define _FIFTEEN 0x45
 #define _15 0x45
-#define _SIxTEEN 0x46
+#define _SIXTEEN 0x46
 #define _16 0x46
 #define _SEVENTEEN 0x47
 #define _17 0x47
@@ -246,7 +246,7 @@
  #define _ARE 0xA5
  #define _AREA 0xA6
  #define _AT 0xA7
- #define _AxIS 0xA8
+ #define _AXIS 0xA8
  #define _BACK 0xA9
  #define _BE 0xAA
  #define _BEARING 0xAB
@@ -295,7 +295,7 @@
  #define  _MODE 0xD6  
  #define  _MOTOR 0xD7  
  #define  _NEW 0xD8  
- #define  _NExT 0xD9  
+ #define  _NEXT 0xD9  
  #define  _NOMINCAL 0xDA  
  #define  _OBJECT 0xDB  
  #define  _OBSTACLE 0xDC  

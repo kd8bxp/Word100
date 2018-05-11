@@ -53,3 +53,9 @@ Version 4.0.0 Apr 13, 2018
 Found some incompatiablies with some other libraries (specifically some Adafruit Display Libraries). Forced all words to upper case. This will break previous sketches, but is easy to fix with search and replace.  
   ** As a side note, I had considered making all the words upper case early in  development. And decided that just adding the underscore would solve some problems.  Which it did - but it created other problems. ** 
 
+
+V 4.0.2 - Apr 21, 2018 - Added SI7021 Talking Thermometer/hygrometer by Dr. H
+https://www.instructables.com/id/A-Talking-Sensor-Si7021-and-Little-Buddy-Talker/
+
+
+
