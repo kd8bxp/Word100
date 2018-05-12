@@ -57,5 +57,5 @@ Found some incompatiablies with some other libraries (specifically some Adafruit
 V 4.0.2 - Apr 21, 2018 - Added SI7021 Talking Thermometer/hygrometer by Dr. H
 https://www.instructables.com/id/A-Talking-Sensor-Si7021-and-Little-Buddy-Talker/
 
-
+V5.0.0 - May 2018 Updated to work with the Big Buddy Talker. (Works a bit different then previous models) 
 

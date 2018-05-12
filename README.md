@@ -78,6 +78,12 @@ https://kd8bxp.blogspot.com/
 Copyright (c) 2017 LeRoy Miller  
 Copyright (C) 2018 LeRoy Miller  
 
+Portions of Code based on Matt Ganis saynumber code.  
+Matt Ganis (c) 2018  
+
+Contributions by  
+Matt Ganis, Dr. H  
+
 ## License
 
 This program is free software: you can redistribute it and/or modify

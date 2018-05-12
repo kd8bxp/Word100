@@ -29,6 +29,8 @@ This program is free software: you can redistribute it and/or modify
     along with this program.  If not, see <http://www.gnu.org/licenses>
 
 May 4, 2018 Updated for the Big Buddy Talker, LeRoy Miller (2018 (c))
+May 12, 2018 sayNumber functions (minutes,hours) all working again.
+	Made small change to how setAMPM work, but nothing that effects the sketches
 
 */
 
@@ -90,7 +92,7 @@ void Word100bbt::say(int value, int pin)    // Calling this function reads words
  */
 
 int Word100bbt::sayMinutes(long number) {
-/*if (number == 0) {
+if (number == 0) {
     
   Word100bbt::say(_ZERO);   //special case for zero
    return 0;
@@ -99,27 +101,28 @@ int Word100bbt::sayMinutes(long number) {
   int _period = number;
   int _tens = _period / TEN;
    if (_tens == 1) {
-         Word100bbt::say(_sayTens[_period-10]);
+         Word100bbt::say(_sayTens[_period-10][0],_sayTens[_period-10][1]);
 		            
          _period = 0; }
                  
    if (_tens > 1) {
-      	 Word100bbt::say(_sayDecades[_tens]);
+      	 Word100bbt::say(_sayDecades[_tens][0],_sayDecades[_tens][1]);
 	     _period = _period - _tens*TEN; } else {
            Word100bbt::say(_ZERO);
 		       }
           
    if (_period == 0)  { return 0; } else {
-         Word100bbt::say(_sayDigits[_period]);
+         Word100bbt::say(_sayDigits[_period][0],_sayDigits[_period][1]);
 			}
 if (_AMPM == 1) {
-	Word100bbt::say(_sayAMPM); }
-*/
+	if (_sayAMPM == 1) { Word100bbt::say(_AM_); } else { Word100bbt::say(_PM_); }
+	//Word100bbt::say(_sayAMPM);
+	 }
 }
 
 
 int Word100bbt::sayHours(long number) {
-/*if (number == 0) {
+if (number == 0) {
    
 	 Word100bbt::say(_ZERO);   //special case for zero
 	 return 0;
@@ -129,35 +132,35 @@ int _period = number;
 
 if (_AMPM == 1) {
  if (_period >= 13) { _period = _period -12;}
- if (number < 12) {_sayAMPM = _AM_; } else {_sayAMPM = _PM_; }
+ if (number < 12) {_sayAMPM = 1 /*_AM_*/; } else {_sayAMPM = 0 /*_PM_*/; }
 }
 
   int _tens = _period / TEN;
    if (_tens == 1) {
 		    
-		Word100bbt::say(_sayTens[_period-10]);
+		Word100bbt::say(_sayTens[_period-10][0],_sayTens[_period-10][1]);
 		         
          _period = 0; }
                  
    if (_tens > 1) {
-       	Word100bbt::say(_sayDecades[_tens]);
+       	Word100bbt::say(_sayDecades[_tens][0],_sayDecades[_tens][1]);
 		 
        _period = _period - _tens*TEN; } 
           
    if (_period == 0)  { return 0; } else {
-		Word100bbt::say(_sayDigits[_period]);
+		Word100bbt::say(_sayDigits[_period][0],_sayDigits[_period][1]);
 		
 	  }
-*/
+
 }
 
 int Word100bbt::sayPeriod(int _period) {
-/*
+
 int _hundreds = _period / HUNDRED;
 
 if (_hundreds != 0) {
 		
-	Word100bbt::say(_sayDigits[_hundreds]);
+	Word100bbt::say(_sayDigits[_hundreds][0],_sayDigits[_hundreds][1]);
 	Word100bbt::say(_HUNDRED);
 	_period = _period - (_hundreds * HUNDRED);
 	}
@@ -166,24 +169,24 @@ int _tens = _period / TEN;
 
 if (_tens == 1) {
 	
-	Word100bbt::say(_sayTens[_period-10]);
+	Word100bbt::say(_sayTens[_period-10][0],_sayTens[_period-10][1]);
 	_period=0;
 	}
 
 if (_tens > 1) {
-	Word100bbt::say(_sayDecades[_tens]);
+	Word100bbt::say(_sayDecades[_tens][0],_sayDecades[_tens][1]);
 	_period = _period - _tens * TEN;
 	}
 
 if (_period == 0) { return(0); } else {
-	Word100bbt::say(_sayDigits[_period]);
+	Word100bbt::say(_sayDigits[_period][0],_sayDigits[_period][1]);
 		}
-*/
+
 }
 
 
 int Word100bbt::sayNumber(long number) {
-/*
+
 if (number == 0) {
 	Word100bbt::say(_ZERO);
 	return(0);
@@ -204,7 +207,7 @@ if (_period != 0) {
 }
 
 Word100bbt::sayPeriod(number);
-*/
+
 }
 
 
