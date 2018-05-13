@@ -22,6 +22,8 @@ See Information_README.txt for minor changes.
 Library version 3.0.0 - Mar 19, 2018 Major change after finding some issues with LBT and 100+ Word Shield with HAM chip.  
 New version has the three variations split into three different libraries, see below for more information.  
 Version 4.0.0 - Apr 13, 2018 - All words are now UPPERCASE and use a underscore. This fixes a problem I found with some other libraries.  
+Version 5.0.0 - May 5, 2018 - Big Buddy Talker added with over 1000+ words  
+http://www.engineeringshock.com/the-big-buddy-talker-project-page.html  
 
 ## Usage
 
@@ -32,12 +34,15 @@ include the library
 ```#include "Word100.h"; //for the 100+ Word Shield with standard chip```   
 ```#include "Word100Ham.h"; //for the 100+ Word Shield with Ham chip```  
 ```#include "Word100LBT.h"; //for the LBT (Little Buddy Talker)```  
+```#include "Word100BBT.h"; //for the BBT (Big Buddy Talker)```  
 invoke the class for your device:  
 ```Word100 Word100(10);```   
 or for the custom ham radio chip:   
 ```Word100ham Word100(10);```   
 For Little Buddy Talker (LBT) invoke:  
 ```Word100lbt Word100(10);```  
+For Big Buddy Talker (BBT) invoke:  
+```Word100bbt Word100(7,8,9,10);```  
 in setup begin the class:   
 ```Word100.begin();```  
 say your word - examples show how to do this from an array, but...   
@@ -72,6 +77,12 @@ https://kd8bxp.blogspot.com/
 
 Copyright (c) 2017 LeRoy Miller  
 Copyright (C) 2018 LeRoy Miller  
+
+Portions of Code based on Matt Ganis saynumber code.  
+Matt Ganis (c) 2018  
+
+Contributions by  
+Matt Ganis, Dr. H  
 
 ## License
 
