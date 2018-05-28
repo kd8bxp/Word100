@@ -31,16 +31,10 @@ This program is free software: you can redistribute it and/or modify
 May 4, 2018 Updated for the Big Buddy Talker, LeRoy Miller (2018 (c))
 May 12, 2018 sayNumber functions (minutes,hours) all working again.
 	Made small change to how setAMPM work, but nothing that effects the sketches
-
+May 28, 2018 Updated timing to 850, and fixed sayMinute issues
 */
 
-// Connect pin#13 (SCLK) To S2 on AP23 
-// Connect pin#11 (DATOUT) To S3 on AP23 
-// Connect pin#13 (SCLK) To S2 on AP23 
-// Connect pin#10 (CS) To S1 on AP23
-// GPIO 9 = STOP
-// DO from Ap23 optional S4 - Not used here
-// ** Add stop bit so that MCU knows then  the chip has stopped talking.  OUT1 is what you'll want to use
+
  
 #define _PLAY_ 0x98
 #define _RAMPUP 0xA8 //COUT ramp up - this value never changes
@@ -53,7 +47,7 @@ _cs[1] = cs2;
 _cs[2] = cs3;
 _cs[3] = cs4;
 Word100bbt::setAMPM(1);
-Word100bbt:setDelay(700); //default delay is about 700 milliseconds
+Word100bbt:setDelay(850); //default delay is about 850 milliseconds
 }
 
 void Word100bbt::begin() {
@@ -94,7 +88,7 @@ void Word100bbt::say(int value, int pin)    // Calling this function reads words
 int Word100bbt::sayMinutes(long number) {
 if (number == 0) {
     
-  Word100bbt::say(_ZERO);   //special case for zero
+  //Word100bbt::say(_ZERO);   //special case for zero
    return 0;
 }
 
@@ -108,9 +102,9 @@ if (number == 0) {
    if (_tens > 1) {
       	 Word100bbt::say(_sayDecades[_tens][0],_sayDecades[_tens][1]);
 	     _period = _period - _tens*TEN; } else {
-           Word100bbt::say(_ZERO);
+           //Word100bbt::say(_ZERO);
 		       }
-          
+      if (number < 10) { Word100bbt::say(_ZERO); }    
    if (_period == 0)  { return 0; } else {
          Word100bbt::say(_sayDigits[_period][0],_sayDigits[_period][1]);
 			}

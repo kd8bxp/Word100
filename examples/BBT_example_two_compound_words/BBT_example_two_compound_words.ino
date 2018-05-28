@@ -30,6 +30,7 @@ This program is free software: you can redistribute it and/or modify
  *  Word timings can be set on the fly, see the code below.
  *  This does take some trial and error, but produces some nice effects.
  *  Copyright (c) 2018 LeRoy Miller
+ * Updated May 28, 2018 - LeRoy Miller
  */
  
 /* Big Buddy Talker Arduino UNO Hookup
@@ -87,17 +88,22 @@ Word100.say(_BUDDY);
   *
   * Timings are tricky and take some trial and error
   * to get right.
+  * 
+  * Big Buddy Talker has a default timing of 850, which is too
+  * long for most words, but needed for the few really long words/sentences
+  * Under most conditions a timing of 700 works pretty well, but does
+  * sound a little robotic.
   */
   
   Word100.setDelay(475);
   Word100.say(_COUNTER);
-  Word100.setDelay(700); //default timing for most words
+  Word100.setDelay(700); //timing that works for most words
   Word100.say(_CLOCKWISE);
 
 //lighting
  Word100.setDelay(450);
  Word100.say(_LIGHT);
- Word100.setDelay(700); //default timing for most words
+ Word100.setDelay(700); //timing that works for most words
  Word100.say(_ING);
 
 //micrometers

@@ -43,7 +43,10 @@ This program is free software: you can redistribute it and/or modify
  *  hold the button until it speaks, it will announce the hours and minutes.
  *  The sketch connects to a NTP (Time Server) to grab the time. The NTPClient library is required, see below.
  *  The WiFiManager library is also required, see below.
- *  Possiable Improvement - Display Time on the 0.66" OLED.
+ *  Possiable Improvement - Display Time on the 0.66" OLED. 
+ *  
+ *  May 28, 2018 - Updated and simplified sketch to work with BBT Library (better)
+ *  
  */
  
 #include <NTPClient.h>  //https://github.com/arduino-libraries/NTPClient
@@ -57,20 +60,12 @@ This program is free software: you can redistribute it and/or modify
 
 #define BUTTON_PIN D3
 #define arr_len( x ) ( sizeof ( x ) / sizeof (*x) )
-#define HUNDRED  100
-#define TEN     10
 
 #define TIMEOFFSET -14400 //Find your Time Zone off set Here https://www.epochconverter.com/timezones OFF Set in Seconds
 #define AMPM 1 //1 = AM PM time, 0 = MILITARY/24 HR Time
 
-int BBTdigits[11][2] = {{_ZERO},{_ONE},{_TWO},{_THREE},{_FOUR},{_FIVE},{_SIX},{_SEVEN},{_EIGHT},{_NINE}};
-int BBTdecades[7][2] = {{0x00,0},{0x00,0},{_TWENTY},{_THIRTY},{_FORTY},{_FIFTY}};
-int BBTtens[11][2] = {{_TEN},{_ELEVEN},{_TWELVE},{_THIRTEEN},{_FOURTEEN},{_FIFTEEN},{_SIXTEEN},{_SEVENTEEN},{_EIGHTEEN},{_NINETEEN}};
-int hundreds;
-int tens;
-
 //The Big Buddy Talker uses 4 CS select pins.
-#define CS1_PIN D1
+#define CS1_PIN D1 
 #define CS2_PIN D2
 #define CS3_PIN D4
 #define CS4_PIN D0
@@ -87,11 +82,13 @@ NTPClient timeClient(ntpUDP, "pool.ntp.org");
 void setup(){
   Serial.begin(9600);
   Word100.begin();
-  
+  delay(600); //wait for BBT to come online
    WiFiManager wifiManager;
    wifiManager.autoConnect("TalkingClock");
   Serial.println("connected...yeey :)");
-  
+  Word100.setDelay(500); //changed default word timings
+  Word100.say(_ON);
+  Word100.say(_LINE);
   timeClient.begin();
   timeClient.setTimeOffset(TIMEOFFSET);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -103,10 +100,8 @@ void loop() {
   timeClient.update();
 if (digitalRead(BUTTON_PIN) == LOW) {sayTime();}
   Serial.println(timeClient.getFormattedTime());
-  delay(1000);
-  yield();
-  
-}
+    yield();
+  }
 
 void sayTime() {
   for (int i = 0; i < arr_len(sentence); i++) {
@@ -115,13 +110,9 @@ void sayTime() {
   }
   Word100.sayHours(timeClient.getHours());
   delay(50);
-  sayMinute(timeClient.getMinutes());
-
-if (AMPM) {
-  if (timeClient.getHours() < 12) {
-    Word100.say(_AM_); } else {
-    Word100.say(_PM_);   }
- }  
+  Word100.sayMinutes(timeClient.getMinutes()); 
+  //May 28, 2018 - new issue found - minutes ending in zero (10,20,30,40,50) will not say AM or PM (?)
+  
 }
 
 /* The code in sayMinute and sayHours is based on saynumber code
@@ -129,55 +120,3 @@ if (AMPM) {
  *  Copyright (c) 2018 Matt Ganis
  */
 
- 
-int sayMinute(long number) {
-
-if (number == 0) {
-  
-  Word100.say(_ZERO);   //special case for zero
-  return 0;
-}
-int period;
-period = number;
-  tens = period / TEN;
-   if (tens == 1) {
-         Word100.say(BBTtens[period-10][0],BBTtens[period-10][1]);                   
-         period = 0; }
-                 
-   if (tens > 1) {
-       Word100.say(BBTdecades[tens][0],BBTdecades[tens][1]);  
-       period = period - tens*TEN; } else {
-       Word100.say(_ZERO);
-       }
-          
-   if (period == 0)  { return 0; } else {
-        Word100.say(BBTdigits[period][0],BBTdigits[period][1]);  }
-}
-
-/*
-int sayHours(long number) {
-
-if (number == 0) {
-  
-  Word100.say(_ZERO);   //special case for zero
-  return 0;
-}
-int period;
-period = number;
-
-if (AMPM) {
-  if (period >= 13) { period = period -12;}
-}
-
-  tens = period / TEN;
-   if (tens == 1) {
-         Word100.say(BBTtens[period-10]);                   
-         period = 0; }
-                 
-   if (tens > 1) {
-       Word100.say(BBTdecades[tens]);  
-       period = period - tens*TEN; } 
-          
-   if (period == 0)  { return 0; } else {
-        Word100.say(BBTdigits[period]);  }
-}*/
