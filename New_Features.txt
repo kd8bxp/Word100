@@ -59,3 +59,6 @@ https://www.instructables.com/id/A-Talking-Sensor-Si7021-and-Little-Buddy-Talker
 
 V5.0.0 - May 2018 Updated to work with the Big Buddy Talker. (Works a bit different then previous models) 
 
+v5.0.7 - May 28, 2018 changed default timing for BBT to 850, corrected/fixxed sayMinute for BBT
+
+

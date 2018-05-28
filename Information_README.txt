@@ -50,6 +50,9 @@ _HERTZ is abrivated to _HZ
 IMPORTANT OTHER THINGS TO BE AWARE OF:
 all words (underscored or otherwise) are defined and not variables. As such they should be avoided as variable names.
 
+* Big Buddy Talker special consideration had to be taken for the Alphabets
+see the BBT_example_three_Alphabets example for more information.
 
 
+Big Buddy Talker default timing has changed to 850 milliseconds to account for a couple of the long words on the 3rd chip.  However most words work good with the original 700 milliseconds timings. Example BBT_example_two_compound_words has more information about how to change timings on the fly
 
