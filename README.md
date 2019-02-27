@@ -24,6 +24,8 @@ New version has the three variations split into three different libraries, see b
 Version 4.0.0 - Apr 13, 2018 - All words are now UPPERCASE and use a underscore. This fixes a problem I found with some other libraries.  
 Version 5.0.0 - May 5, 2018 - Big Buddy Talker added with over 1000+ words  
 http://www.engineeringshock.com/the-big-buddy-talker-project-page.html  
+Version 5.0.8 - Feb 26, 2019 - Added example for the Arduino E-Z Comms Shield for the LBT chip.  
+http://www.engineeringshock.com/arduino-e-z-comms-project-page.html  
 
 ## Usage
 
@@ -77,6 +79,7 @@ https://kd8bxp.blogspot.com/
 
 Copyright (c) 2017 LeRoy Miller  
 Copyright (C) 2018 LeRoy Miller  
+Copyright (C) 2019 LeRoy Miller  
 
 Portions of Code based on Matt Ganis saynumber code.  
 Matt Ganis (c) 2018  
