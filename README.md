@@ -28,6 +28,8 @@ Version 5.0.0 - May 5, 2018 - Big Buddy Talker added with over 1000+ words
 http://www.engineeringshock.com/the-big-buddy-talker-project-page.html  
 Version 5.0.8 - Feb 26, 2019 - Added example for the Arduino E-Z Comms Shield for the LBT chip.  
 http://www.engineeringshock.com/arduino-e-z-comms-project-page.html  
+v5.1.0 - Mar 22, 2019 added support for softwareSPI - allows the 100+ Word Shield and E-Z Comms shield to work with the Leonardo and MEGA2560
+Requires: The softwareSPI library by RevPhil https://github.com/RevPhil/arduino_SoftwareSPI  
 
 ## Usage
 

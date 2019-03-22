@@ -48,15 +48,35 @@ Version 3.0.0 - Mar 19, 2018 Split classes into own header and cpp files, to ove
 
 version 3.2.2 - added sayHours, sayMinutes, sayNumber, setAMPM
 v 3.2.3 - added setDelay to LBT library
+
+V 5.1.0 - Mar 22, 2019 added support for softwareSPI, the 100+ Word Shield and E-Z will work with the Leonardo and MEGA2560 boards.
+Requires: SoftwareSPI library found here: https://github.com/RevPhil/arduino_SoftwareSPI
  */
 
 #ifndef Word100LBT_h
 #define Word100LBT_h
 
+#if ARDUINO_AVR_LEONARDO || ARDUINO_AVR_MEGA2560
+#define SSPI_MODE true
+#else
+#define SSPI_MODE false
+#endif
+
 #include "Arduino.h"
-#include <SPI.h>
 #include "default.h"
 
+#if SSPI_MODE
+#include <SoftwareSPI.h>
+// this SSPI demo uses the UNO SPI pins for convenience
+#define SCK_PIN 13
+#define MISO_PIN 12
+#define MOSI_PIN 11
+#define CS_PIN 10
+#define SELECT *csReg &= ~csBit;
+#define DESELECT *csReg |= csBit;
+#else
+#include <SPI.h>
+#endif
 
 class Word100lbt {
 private:
@@ -71,6 +91,7 @@ private:
 	bool _AMPM;
 	int _sayAMPM;
 	int _wait;
+    uint8_t csBit, *csReg;  // Chip Select bit and register
 public:
 Word100lbt(int cs);
     void begin();

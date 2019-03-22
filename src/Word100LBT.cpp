@@ -1,6 +1,18 @@
 #include "Arduino.h"
 #include "Word100LBT.h"
+
+#if SSPI_MODE
+#include <SoftwareSPI.h>
+// this SSPI demo uses the UNO SPI pins for convenience
+#define SCK_PIN 13
+#define MISO_PIN 12
+#define MOSI_PIN 11
+#define CS_PIN 10
+#define SELECT *csReg &= ~csBit;
+#define DESELECT *csReg |= csBit;
+#else
 #include <SPI.h>
+#endif
 
 /*
 The "100+ Word" Arduino Audio Shield! Speak Arduino, Speak!
@@ -49,11 +61,19 @@ Word100lbt:setDelay(700); //default delay is about 700 milliseconds
 }
 
 void Word100lbt::begin() {
-
+pinMode(_cs,OUTPUT);    // Chip select pins is an output
+  digitalWrite(_cs,HIGH); // Set chip select to be HIGH (5v) by default.  The chip on the shield is selected when this line is brought low. 
+#if SSPI_MODE
+uint8_t success = SSPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN);
+SSPI.makeRegMask(CS_PIN, &csReg, &csBit, OUTPUT);
+delay(1000);   // One second delay
+  digitalWrite(_cs, LOW);
+  SSPI.transfer(_RAMPUP);
+  SSPI.transfer(0x00);
+  digitalWrite(_cs,HIGH);
+#else
   SPI.begin();             // Initialize SPI
   SPI.setClockDivider(SPI_CLOCK_DIV32); // low frequency SPI
-  pinMode(_cs,OUTPUT);    // Chip select pins is an output
-  digitalWrite(_cs,HIGH); // Set chip select to be HIGH (5v) by default.  The chip on the shield is selected when this line is brought low. 
   SPI.setBitOrder(MSBFIRST);  // OTP requires MSB first
   SPI.setDataMode(SPI_MODE0);  // Use MODE0, as all other modes to not work
   delay(1000);   // One second delay
@@ -61,19 +81,28 @@ void Word100lbt::begin() {
   SPI.transfer(_RAMPUP);
   SPI.transfer(0x00);
   digitalWrite(_cs,HIGH);
+#endif
 }
 
 void Word100lbt::say(int value)    // Calling this function reads words individually
 {
   
   delay(7);
+#if SSPI_MODE
+  // Transmit Data
+  digitalWrite(_cs,LOW);
+  SSPI.transfer(_PLAY);
+  SSPI.transfer(value);
+  digitalWrite(_cs,HIGH);
+  delay(_wait); 
+#else
   // Transmit Data
   digitalWrite(_cs,LOW);
   SPI.transfer(_PLAY);
   SPI.transfer(value);
   digitalWrite(_cs,HIGH);
   delay(_wait); 
-  
+#endif
 }
 
 /* Portions of this code based on example by Matt Ganis (matt.ganis@gmail.com) or @mattganis on Twitter

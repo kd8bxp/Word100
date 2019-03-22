@@ -1,6 +1,18 @@
 #include "Arduino.h"
 #include "Word100.h"
+
+#if SSPI_MODE
+#include <SoftwareSPI.h>
+// this SSPI demo uses the UNO SPI pins for convenience
+#define SCK_PIN 13
+#define MISO_PIN 12
+#define MOSI_PIN 11
+#define CS_PIN 10
+#define SELECT *csReg &= ~csBit;
+#define DESELECT *csReg |= csBit;
+#else
 #include <SPI.h>
+#endif
 
 /*
 The "100+ Word" Arduino Audio Shield! Speak Arduino, Speak!
@@ -51,18 +63,48 @@ Word100:setAMPM(1);
 void Word100::begin() {
 
 pinMode(_STOP,INPUT);     // Set the "STOP" GPIO as an input.  This is the busy signal, and is high when the shield is busy playing a word
+#if SSPI_MODE
+uint8_t success = SSPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN);
+SSPI.makeRegMask(CS_PIN, &csReg, &csBit, OUTPUT);
+#else
   SPI.begin();             // Initialize SPI
-  SPI.setClockDivider(SPI_CLOCK_DIV32); // low frequency SPI
-  pinMode(_cs,OUTPUT);    // Chip select pins is an output
-  digitalWrite(_cs,HIGH); // Set chip select to be HIGH (5v) by default.  The chip on the shield is selected when this line is brought low. 
+  SPI.setClockDivider(SPI_CLOCK_DIV32); // low frequency SPI  
   SPI.setBitOrder(MSBFIRST);  // OTP requires MSB first
   SPI.setDataMode(SPI_MODE0);  // Use MODE0, as all other modes to not work
+#endif
+pinMode(_cs,OUTPUT);    // Chip select pins is an output
+  digitalWrite(_cs,HIGH); // Set chip select to be HIGH (5v) by default.  The chip on the shield is selected when this line is brought low. 
   delay(1000);   // One second delay
 }
 
 void Word100::say(int value)    // Calling this function reads words individually
 {
+#if SSPI_MODE
   // ramp up
+  digitalWrite(_cs,LOW);
+  SSPI.transfer(_RAMPUP);
+  SSPI.transfer(0x00);
+  digitalWrite(_cs,HIGH);
+  delay(7);
+  // Transmit Data
+  digitalWrite(_cs,LOW);
+  SSPI.transfer(_PLAY);
+  SSPI.transfer(value);
+  digitalWrite(_cs,HIGH);
+  delay(5);
+  while (digitalRead(_STOP) == HIGH) { 
+       {}
+    } 
+  //delay(5);
+  // ramp down
+  digitalWrite(_cs,LOW);
+  SSPI.transfer(_RAMPDOWN);
+  SSPI.transfer(0x00);
+  digitalWrite(_cs,HIGH);
+  delay(10);
+  // YOU REALLY NEED TO ADD A STOP INPUT HERE, OR ELSE YOU'RE REALLY WASTING POWER!
+#else
+// ramp up
   digitalWrite(_cs,LOW);
   SPI.transfer(_RAMPUP);
   SPI.transfer(0x00);
@@ -85,6 +127,7 @@ void Word100::say(int value)    // Calling this function reads words individuall
   digitalWrite(_cs,HIGH);
   delay(10);
   // YOU REALLY NEED TO ADD A STOP INPUT HERE, OR ELSE YOU'RE REALLY WASTING POWER!
+#endif
 }
 
 /* Portions of this code based on example by Matt Ganis (matt.ganis@gmail.com) or @mattganis on Twitter
