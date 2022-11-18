@@ -1,5 +1,6 @@
 # Word100 Library
 
+[![Compile Examples](https://github.com/kd8bxp/Word100/workflows/Compile%20Examples/badge.svg)](https://github.com/kd8bxp/Word100/actions?workflow=Compile+Examples)
 [![arduino-library-badge](https://www.ardu-badge.com/badge/Word100%20Library.svg?)](https://www.ardu-badge.com/Word100%20Library)  
 
 A simple library for The "100+ Word" Arduino Audio Shield! Speak Arduino, Speak!  
